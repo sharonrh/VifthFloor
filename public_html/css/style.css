@@ -1,0 +1,165 @@
+@import url('bootstrap.css');
+
+html,
+body {
+    margin:0;
+    padding:0;
+    height:100%;
+}
+#container {
+    min-height:100%;
+    position:relative;
+}
+/*============================ header =====================================*/
+
+.navbar-inverse {
+    background-color: #EA1515;
+    border-radius: 0;
+    border: none;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #D60D0D;
+    box-shadow: 0 -2px 2px 1px #B00B0B inset;
+}
+.navbar-brand-box {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    position: absolute;
+    z-index: 1;
+    margin-top: -15px;
+    margin-left: 45px;
+}
+
+#brand {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 30px;
+    transform: translate(-50%, -50%);
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-center {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin: auto;
+}
+/*=======================================================================*/
+
+/*============================ home =====================================*/
+
+#main {
+    padding-bottom: 250px;
+}
+
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    line-height: 1;
+    width: 100%;
+}
+
+.box-information {
+    background-color: #EA1515;
+    padding: 20px 20px;
+}
+#latest-news {
+    color: #EA1515;
+    font-weight: bold;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.white-font {
+    color: white;
+}
+.read-more-link {
+    color: white;
+}
+.read-more-link:hover {
+    color: white;
+    text-decoration: none;
+}
+/*=======================================================================*/
+
+/*============================ footer =====================================*/
+
+footer {
+    border-top: 5px solid lightgray;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height: 150px;
+}
+#footer {
+    list-style: none;
+    float: right;
+}
+#footer li {
+    float: left;
+    padding: 30px;
+}
+#footer a {
+    display: block;
+    color: red;
+    font-weight: bold;
+    font-size: 16px;
+}
+#footer a:hover {
+    text-decoration: none;
+}
+/*=======================================================================*/
+
+/*=========================== miscellanous ==============================*/
+.clear {
+    clear: both;
+}
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+
+/*=======================================================================*/
+
+/*=========================== media ==============================*/
+
+@media (max-width: 767px) {
+    .navbar-brand-box {
+        width: 200px;
+        height: 50px;
+        background-color: white;
+        position: absolute;
+        z-index: 0;
+        margin-top: -15px;
+        margin-left: -15px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar-center {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        position: relative;
+        left: 50%;
+        transform: translate(-25%, 0%);
+        margin: auto;
+    }
+}
