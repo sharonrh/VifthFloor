@@ -17,12 +17,12 @@ class Game extends CI_Controller
 
 	function index($id=NULL)
 	{
-		$total_rows = $this->db->get('game');
+		$total_rows = $this->db->get('games');
 		$this->load->library('pagination');
 		$this->load->helper('url');
 		$this->load->helper('text');
 
-		$config['base_url']=base_url()."index.php/news/index";
+		$config['base_url']=base_url()."index.php/game/index";
 		$config['total_rows']=$total_rows->num_rows();
 		$config['per_page']='1';
 		$config['first_page']='First';
@@ -33,7 +33,7 @@ class Game extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['page']=$this->pagination->create_links();
 
-		$data['records']=$this->model_news->takeSome($config['per_page'],$game);
+		$data['records']=$this->model_game->takeSome($config['per_page'],$id);
 
 		$this->load->view('viewGame', $data);
 	}
