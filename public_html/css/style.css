@@ -152,6 +152,7 @@ body {
     font-size: 150%;
     font-weight: bold;
 }
+
 /*=======================================================================*/
 
 /*============================ footer =====================================*/
@@ -323,6 +324,24 @@ figure:hover:before {
 .read-more-link:hover {
     color: #5DC1F0;
     text-decoration: none;
+}
+.news-content h2 a{
+    color: black;
+}
+.news-content h2 a:hover {
+    color: black;
+    text-decoration: none;
+}
+.news-detail-title h1 {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+.news-detail {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.news-detail-title .posted {
+    font-style: italic;
 }
 /*=============================================================================*/
 
