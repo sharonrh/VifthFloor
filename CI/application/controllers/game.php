@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Game extends CI_Controller
+class game extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('model_game');
-		$this->load->model('model_login');
+		$this->load->model('modelGame');
+		$this->load->model('modelLogin');
 		$this->load->library('image_CRUD');
 	}
 
@@ -17,7 +17,7 @@ class Game extends CI_Controller
 
 	function index($id=NULL)
 	{
-		$total_rows = $this->db->get('game');
+		$total_rows = $this->db->get('games');
 		$this->load->library('pagination');
 		$this->load->helper('url');
 		$this->load->helper('text');
@@ -33,14 +33,14 @@ class Game extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['page']=$this->pagination->create_links();
 
-		$data['records']=$this->model_news->takeSome($config['per_page'],$game);
+		$data['records']=$this->modelNews->takeSome($config['per_page'],$id);
 
 		$this->load->view('viewGame', $data);
 	}
 
 	function view($slug)
 	{
-		$data['news']=$this->model_news->takeNews($slug);
+		$data['news']=$this->modelNews->takeNews($slug);
 		$data['title']=$data['news']['Title'];
 		$data['content']=$data['news']['Content'];
 		$this->load->view('readNews',$data);
@@ -48,7 +48,7 @@ class Game extends CI_Controller
 
 	function addNew()
 	{
-		$result=$this->model_login->isLogin();
+		$result=$this->modelLogin->isLogin();
 
 		if($result)
 		{
@@ -56,9 +56,9 @@ class Game extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->model_game->addNew();
+				$this->modelGame->addNew();
 				$this->load->helper('url');
-				redirect('/game/index');
+				redirect('/news/index');
 			}
 
 			$image_crud = new image_CRUD();
@@ -91,10 +91,12 @@ class Game extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->model_game->update($slug);
+				$this->modelGame->update($slug);
 				$this->load->helper('url');
 				redirect('/news/index');
 			}
+
+			echo "string";
 
 			$image_crud = new image_CRUD();
 			
@@ -105,7 +107,7 @@ class Game extends CI_Controller
 			$this->db->where('IdGame',$slug);
 			$output = $image_crud->render();
 
-			$output->data=$this->model_game->select($slug);
+			$data=$this->modelGame->select($slug);
 
 			$this->load->view('updateGame',$output);
 		}
