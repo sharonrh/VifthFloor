@@ -48,7 +48,7 @@ class Game extends CI_Controller
 
 	function addNew()
 	{
-		$result=$this->modelLogin->isLogin();
+		$result=$this->model_login->isLogin();
 
 		if($result)
 		{
@@ -91,14 +91,23 @@ class Game extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->model_news->update($slug);
+				$this->model_game->update($slug);
 				$this->load->helper('url');
 				redirect('/news/index');
 			}
+
+			$image_crud = new image_CRUD();
 			
-			$data['news']=$this->model_news->select($slug);
-			$data['category']=$this->model_news->fillDropCategory();
-			$this->load->view('updateNews',$data);
+			$image_crud->set_primary_key_field('Id');
+			$image_crud->set_url_field('Location');
+			$image_crud->set_table('gamesimage')
+				->set_image_path('assets/uploads');
+			$this->db->where('IdGame',$slug);
+			$output = $image_crud->render();
+
+			$output->data=$this->model_game->select($slug);
+
+			$this->load->view('updateGame',$output);
 		}
 		
 		else
