@@ -1,0 +1,61 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class login extends CI_Controller
+{
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('modelLogin');
+
+	}
+
+	public function login()
+	{
+		parent::Controller();
+	}
+
+	function index()
+	{
+		$result=$this->modelLogin->isLogin();
+		
+		if(!$result)
+		{
+			$msg="";
+			$data['msg']=$msg;
+			$this->load->helper('form');
+			$this->load->view('viewLogin',$data);
+		}
+
+		else
+		{
+			$this->load->helper('url');
+			redirect('/news/addNew');
+		}
+		
+	}
+
+	function check()
+	{
+		$result=$this->modelLogin->process();
+
+		if(!$result)
+		{
+			$msg='<font color=red>Invalid username and/or password.</font><br />';
+			$this->index($msg);
+		}
+
+		else
+		{
+			$this->load->helper('url');
+			redirect('/news/addNew');
+		}
+	}
+
+	function logout()
+	{
+		$this->session->sess_destroy();
+		$this->load->helper('url');
+		redirect('login');
+	}
+}
+?>
