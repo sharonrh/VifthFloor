@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class modelNews extends CI_Model
+class Model_news extends CI_Model
 {
 	
 	function takeNews($slug=FALSE)

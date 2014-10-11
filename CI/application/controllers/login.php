@@ -1,11 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class login extends CI_Controller
+class Login extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('modelLogin');
+		$this->load->model('model_login');
 
 	}
 
@@ -16,7 +16,7 @@ class login extends CI_Controller
 
 	function index()
 	{
-		$result=$this->modelLogin->isLogin();
+		$result=$this->model_login->isLogin();
 		
 		if(!$result)
 		{
@@ -36,7 +36,7 @@ class login extends CI_Controller
 
 	function check()
 	{
-		$result=$this->modelLogin->process();
+		$result=$this->model_login->process();
 
 		if(!$result)
 		{

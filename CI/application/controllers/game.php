@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class game extends CI_Controller
+class Game extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('modelGame');
-		$this->load->model('modelLogin');
+		$this->load->model('model_game');
+		$this->load->model('model_login');
 		$this->load->library('image_CRUD');
 	}
 
@@ -33,14 +33,14 @@ class game extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['page']=$this->pagination->create_links();
 
-		$data['records']=$this->modelNews->takeSome($config['per_page'],$game);
+		$data['records']=$this->model_news->takeSome($config['per_page'],$game);
 
 		$this->load->view('viewGame', $data);
 	}
 
 	function view($slug)
 	{
-		$data['news']=$this->modelNews->takeNews($slug);
+		$data['news']=$this->model_news->takeNews($slug);
 		$data['title']=$data['news']['Title'];
 		$data['content']=$data['news']['Content'];
 		$this->load->view('readNews',$data);
@@ -56,7 +56,7 @@ class game extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->modelGame->addNew();
+				$this->model_game->addNew();
 				$this->load->helper('url');
 				redirect('/game/index');
 			}
@@ -91,13 +91,13 @@ class game extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->modelNews->update($slug);
+				$this->model_news->update($slug);
 				$this->load->helper('url');
 				redirect('/news/index');
 			}
 			
-			$data['news']=$this->modelNews->select($slug);
-			$data['category']=$this->modelNews->fillDropCategory();
+			$data['news']=$this->model_news->select($slug);
+			$data['category']=$this->model_news->fillDropCategory();
 			$this->load->view('updateNews',$data);
 		}
 		

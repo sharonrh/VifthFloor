@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class modelGame extends CI_Model
+class Model_game extends CI_Model
 {
 
 	function addNew()

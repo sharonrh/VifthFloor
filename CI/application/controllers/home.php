@@ -42,8 +42,8 @@ class Home extends CI_Controller
 
 	function viewSome()
 	{
-		$this->load->model('modelNews');
-		$data['records']=$this->modelNews->takeSome();
+		$this->load->model('model_news');
+		$data['records']=$this->model_news->takeSome();
 		$this->load->view('viewNews',$data);
 	}
 

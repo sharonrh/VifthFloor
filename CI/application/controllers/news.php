@@ -1,12 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class news extends CI_Controller
+class News extends CI_Controller
 {
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('modelNews');
-		$this->load->model('modelLogin');
+		$this->load->model('model_news');
+		$this->load->model('model_login');
 		$this->load->library('image_CRUD');
 	}
 
@@ -33,14 +33,14 @@ class news extends CI_Controller
 		$this->pagination->initialize($config);
 		$data['page']=$this->pagination->create_links();
 
-		$data['records']=$this->modelNews->takeSome($config['per_page'],$id);
+		$data['records']=$this->model_news->takeSome($config['per_page'],$id);
 
 		$this->load->view('viewNews', $data);
 	}
 
 	function view($slug)
 	{
-		$data['news']=$this->modelNews->takeNews($slug);
+		$data['news']=$this->model_news->takeNews($slug);
 		$data['title']=$data['news']['Title'];
 		$data['content']=$data['news']['Content'];
 		$this->load->view('readNews',$data);
@@ -48,7 +48,7 @@ class news extends CI_Controller
 
 	function addNew()
 	{
-		$result=$this->modelLogin->isLogin();
+		$result=$this->model_login->isLogin();
 
 		$data=array();
 
@@ -58,14 +58,14 @@ class news extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->modelNews->addNew();
+				$this->model_news->addNew();
 				$this->load->helper('url');
 				redirect('/news/index');
 			}
 
 			$this->load->helper('url');
 
-			$data['category']=$this->modelNews->fillDropCategory();
+			$data['category']=$this->model_news->fillDropCategory();
 
 			$this->load->view('addNews',$data);
 		}
@@ -79,7 +79,7 @@ class news extends CI_Controller
 
 	function update($slug)
 	{
-		$result=$this->modelLogin->isLogin();
+		$result=$this->model_login->isLogin();
 
 		if($result)
 		{
@@ -87,13 +87,13 @@ class news extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->modelNews->update($slug);
+				$this->model_news->update($slug);
 				$this->load->helper('url');
 				redirect('/news/index');
 			}
 			
-			$data['news']=$this->modelNews->select($slug);
-			$data['category']=$this->modelNews->fillDropCategory();
+			$data['news']=$this->model_news->select($slug);
+			$data['category']=$this->model_news->fillDropCategory();
 			$this->load->view('updateNews',$data);
 		}
 		
