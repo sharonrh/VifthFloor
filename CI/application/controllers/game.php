@@ -40,10 +40,10 @@ class Game extends CI_Controller
 
 	function view($slug)
 	{
-		$data['news']=$this->model_news->takeNews($slug);
-		$data['title']=$data['news']['Title'];
-		$data['content']=$data['news']['Content'];
-		$this->load->view('readNews',$data);
+		$data['games']=$this->model_game->takeGame($slug);
+		$data['title']=$data['games']['Title'];
+		$data['description']=$data['games']['Description'];
+		$this->load->view('readGame',$data);
 	}
 
 	function addNew()
