@@ -13,7 +13,7 @@ and open the template in the editor.
         <link href="../../assets/css/style.css" rel="stylesheet" media="screen">
         <script src="../../assets/js/jquery-latest.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="../../assets/js/bootstrap.js"></script>
-        <script type="text/javascript" src="../../assets/js/bootstrap-lightbox.js"></script>
+        <!-- <script type="text/javascript" src="../../assets/js/bootstrap-lightbox.js"></script> -->
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -24,6 +24,34 @@ and open the template in the editor.
             $(function() {
                 $("header").load("header.html");
                 $("footer").load("footer.html");
+            });
+        </script>
+
+        <!-- fancybox -->
+        <!-- Add mousewheel plugin (this is optional) -->
+        <script type="text/javascript" src="../../assets/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+        <!-- Add fancyBox -->
+        <link rel="stylesheet" href="../../assets/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="../../assets/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+        <!-- Optionally add helpers - button, thumbnail and/or media -->
+        <link rel="stylesheet" href="../../assets/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="../../assets/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+        <script type="text/javascript" src="../../assets/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+
+        <link rel="stylesheet" href="../../assets/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
+        <script type="text/javascript" src="../../assets/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".fancybox").fancybox({
+                    helpers: {
+                        overlay: {
+                            locked: false
+                        }
+                    }
+                });
             });
         </script>
     </head>
@@ -48,22 +76,21 @@ and open the template in the editor.
                 <div class="game-screenshot">
                     <div class="row atas">
                         <div class="col-md-6">
-                            <a data-toggle="lightbox" href="#demoLightbox">
+                            <a class="fancybox" rel="group" href="../../assets/images/satu.jpg">
                                 <img class="img-responsive" src="../../assets/images/satu.jpg">
                             </a>
-                            <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-                                <div class="lightbox-content">
-                                    <img src="../../assets/images/icon2.png">
-                                </div>
-                            </div>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" src="../../assets/images/satu.jpg">
+                            <a class="fancybox" rel="group" href="../../assets/images/satu.jpg">
+                                <img class="img-responsive" src="../../assets/images/satu.jpg">
+                            </a>
                         </div>
                     </div>
                     <div class="row bawah">
                         <div class="col-md-6">
-                            <img class="img-responsive" src="../../assets/images/satu.jpg">
+                            <a class="fancybox" rel="group" href="../../assets/images/satu.jpg">
+                                <img class="img-responsive" src="../../assets/images/satu.jpg">
+                            </a>
                         </div>
                         <div class="col-md-6">
                             <img class="img-responsive" src="../../assets/images/satu.jpg">
