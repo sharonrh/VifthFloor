@@ -10,23 +10,18 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <!-- Bootstrap -->
-        <link href="../../assets/css/style.css" rel="stylesheet" media="screen">
-        <script src="../../assets/js/jquery-latest.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="../../assets/js/bootstrap.js"></script>
+        <link href="../assets/css/style.css" rel="stylesheet" media="screen">
+        <script src="../assets/js/jquery-latest.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="../assets/js/bootstrap.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-        <script>
-            $(function() {
-                $("header").load("header.html");
-                $("footer").load("footer.html");
-            });
-        </script>
+        <![endif]--> 
     </head>
     <body>
+        <?php $this->load->view('header'); ?>
         <div id="container">
             <header class="margin-bottom-30"></header>
             <div id="main-container">
@@ -43,12 +38,12 @@ and open the template in the editor.
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive" src="../../assets/images/satu.jpg" alt="">
+                                <img class="img-responsive" src="../assets/images/satu.jpg" alt="">
                                 <div class="carousel-caption">
                                 </div>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src="../../assets/images/dua.jpg" alt="">
+                                <img class="img-responsive" src="../assets/images/dua.jpg" alt="">
                                 <div class="carousel-caption">
                                 </div>
                             </div>
@@ -65,7 +60,7 @@ and open the template in the editor.
 
                     <div class="row showcase margin-bottom-50">
                         <div class="col-md-3">
-                            <img class="img-responsive" src="../../assets/images/meh.png">
+                            <img class="img-responsive" src="../assets/images/meh.png">
                         </div>
                         <div class="col-md-9">
                             <div class="game-title">
@@ -75,7 +70,7 @@ and open the template in the editor.
                     </div>
                     <div class="row showcase margin-bottom-50">
                         <div class="col-md-3">
-                            <img class="img-responsive" src="../../assets/images/meh.png">
+                            <img class="img-responsive" src="../assets/images/meh.png">
                         </div>
                         <div class="col-md-9">
                             <div class="game-title">
@@ -85,7 +80,7 @@ and open the template in the editor.
                     </div>
                     <div class="row showcase margin-bottom-50">
                         <div class="col-md-3">
-                            <img class="img-responsive" src="../../assets/images/meh.png">
+                            <img class="img-responsive" src="../assets/images/meh.png">
                         </div>
                         <div class="col-md-9">
                             <div class="game-title">
@@ -106,7 +101,9 @@ and open the template in the editor.
                         </ul>
                     </div>
                 </div>
-                <footer></footer>
+                <footer>
+                    <?php $this->load->view('footer'); ?>
+                </footer>
             </div>
         </div>
     </body>

@@ -34,8 +34,8 @@ class Game extends CI_Controller
 		$data['page']=$this->pagination->create_links();
 
 		$data['records']=$this->model_game->takeSome($config['per_page'],$id);
-
-		$this->load->view('viewGame', $data);
+		
+		$this->load->view('showcase', $data);
 	}
 
 	function view($slug)
