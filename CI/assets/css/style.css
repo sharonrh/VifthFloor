@@ -1,16 +1,19 @@
 @import url('bootstrap.css');
+@import url('bootstrap-lightbox.css');
+@import url('style-profile.css');
+@import url(http://fonts.googleapis.com/css?family=Hind);
 
 html,
 body {
     margin:0;
     padding:0;
     height:100%;
+    font-family: 'Hind';
 }
 #container {
     min-height:100%;
     position:relative;
 }
-
 /*============================ header =====================================*/
 
 .navbar-header{
@@ -374,7 +377,7 @@ figure:hover:before {
 }
 .game-title {
     height: 195px;
-    border-bottom: gray 3px solid;
+    border-bottom: gray 6px solid;
     position: relative;
 }
 .game-title h2 {
@@ -382,4 +385,57 @@ figure:hover:before {
     bottom: 0;
     font-size: 70px;
     font-weight: bold;
+    margin-left: 20px;
+}
+.game-title a {
+    color: black;
+}
+.game-title a:hover {
+    text-decoration: none;
+    color: grey;
+}
+/*=============================================================================*/
+
+/*=========================== game ============================*/
+
+.game-about {
+    padding: 30px 300px;
+}
+.game-about p {
+    margin: 0;
+    color: #706F6F;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.game-about li {
+    color: #706F6F;
+    font-size: 18px;
+    background: url(../images/star-icon.png) no-repeat left top;
+    padding: 3px 0px 3px 33px;
+    list-style: none;
+    margin-left: -40px;
+}
+.game-screenshot .row {
+    margin-right: 0;
+}
+.game-screenshot .atas {
+    padding-top: 50px;
+    padding-left: 120px;
+    padding-right: 120px;
+}
+.game-screenshot .bawah {
+    padding-top: 30px;
+    padding-left: 120px;
+    padding-right: 120px;
+    padding-bottom: 50px;
+}
+.game-available {
+    padding: 10px 300px;
+    text-align: center;
+}
+.game-available p {
+    color: #706F6F;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 40px;
 }
