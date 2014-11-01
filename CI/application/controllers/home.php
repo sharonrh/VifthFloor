@@ -5,11 +5,11 @@ class Home extends CI_Controller
 	public function _home()
 	{
 		parent::_home();
-		$this->load->model();
 	}
 
 	function index()
 	{
+		$this->load->helper('url');
 		$data['title'] = "Halo semuanya";
 		$data['headline'] = "Halo";
 		$data['content'] = "Buatlah suatu permainan pada halaman Web, sebut saja “TangkapTikus”, dengan
@@ -30,7 +30,7 @@ class Home extends CI_Controller
 							style). Mekanisme penggantian diserahkan pada anda dan merupakan salah
 							satu komponen yang dinilai.";
 		$data['bullet'] = array('satu satu','dua dua','tiga tiga','empat empat');
-		$this->load->view('home_view',$data);
+		$this->load->view('home', $data);
 	}
 }
 ?>
