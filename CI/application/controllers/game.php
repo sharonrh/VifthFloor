@@ -8,6 +8,7 @@ class Game extends CI_Controller
 		$this->load->model('model_game');
 		$this->load->model('model_login');
 		$this->load->library('image_CRUD');
+		$this->load->helper('url');
 	}
 
 	public function game()
@@ -19,7 +20,6 @@ class Game extends CI_Controller
 	{
 		$total_rows = $this->db->get('games');
 		$this->load->library('pagination');
-		$this->load->helper('url');
 		$this->load->helper('text');
 
 		$config['base_url']=base_url()."index.php/game/index";
@@ -49,7 +49,7 @@ class Game extends CI_Controller
 		$data['games']=$this->model_game->takeGame($slug);
 		$data['title']=$data['games']['Title'];
 		$data['description']=$data['games']['Description'];
-		$this->load->view('readGame',$data);
+		$this->load->view('game',$data);
 	}
 
 	function addNew()
@@ -82,7 +82,6 @@ class Game extends CI_Controller
 
 		else
 		{
-			$this->load->helper('url');
 			redirect('/login/index');
 		}
 	}
@@ -106,7 +105,6 @@ class Game extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_game->update($_POST['id']);
-				$this->load->helper('url');
 				redirect('/game/index');
 			}
 
@@ -134,7 +132,6 @@ class Game extends CI_Controller
 
 		else
 		{
-			$this->load->helper('url');
 			redirect('/login/index');
 		}
 	}

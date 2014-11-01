@@ -10,9 +10,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <!-- Bootstrap -->
-        <link href=<?php echo base_url("assets/css/style.css")?> rel="stylesheet" media="screen">
-        <script src=<?php echo base_url("/assets/js/jquery-latest.min.js")?> type="text/javascript"></script>
-        <script type="text/javascript" src=<?php echo base_url("assets/js/bootstrap.js")?>></script>
+        <link href=<?php echo base_url("assets/css/style.css");?> rel="stylesheet" media="screen">
+        <script src=<?php echo base_url("assets/js/jquery-latest.min.js");?> type="text/javascript"></script>
+        <script type="text/javascript" src=<?php echo base_url("assets/js/bootstrap.js");?>></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -38,12 +38,12 @@ and open the template in the editor.
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg")?> alt="">
+                                <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?> alt="">
                                 <div class="carousel-caption">
                                 </div>
                             </div>
                             <div class="item">
-                                <img class="img-responsive" src=<?php echo base_url("assets/images/dua.jpg")?> alt="">
+                                <img class="img-responsive" src=<?php echo base_url("assets/images/dua.jpg");?> alt="">
                                 <div class="carousel-caption">
                                 </div>
                             </div>
@@ -62,11 +62,11 @@ and open the template in the editor.
 
                     <div class="row showcase margin-bottom-50">
                         <div class="col-md-3">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/meh.png")?>>
+                            <img class="img-responsive" src=<?php echo base_url("assets/images/meh.png");?>>
                         </div>
                         <div class="col-md-9">
                             <div class="game-title">
-                                <h2><a href="game.html"><?php echo $row->Title; ?></a></h2>
+                                <h2><a href=<?php echo site_url("/game/view/$row->Id");?>><?php echo $row->Title; ?></a></h2>
                             </div>
                         </div>                      
                     </div>
