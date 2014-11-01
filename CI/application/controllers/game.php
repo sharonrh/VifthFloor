@@ -48,7 +48,7 @@ class Game extends CI_Controller
 
 	function addNew()
 	{
-		$result=$this->modelLogin->isLogin();
+		$result=$this->model_login->isLogin();
 
 		if($result)
 		{
@@ -81,8 +81,16 @@ class Game extends CI_Controller
 		}
 	}
 
+	function allGame() {
+
+		$data['games'] = $this->model_game->takeGame();
+		$this->load->helper('form');
+		$this->load->view('allGame',$data);
+
+	}
+
 	function update($slug)
-	{
+	{	
 		$result=$this->model_login->isLogin();
 
 		if($result)
@@ -91,27 +99,33 @@ class Game extends CI_Controller
 
 			if($this->input->post('submit'))
 			{
-				$this->model_game->update($slug);
+				$this->model_game->update($_POST['id']);
 				$this->load->helper('url');
-				redirect('/news/index');
+				redirect('/game/index');
 			}
 
-			echo "string";
+			if (!strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
+			{
+				$this->session->set_userdata('gameId', $_POST['id']);
+				echo "string";
+			}
+
+			$data = $this->model_game->select($slug);
 
 			$image_crud = new image_CRUD();
-			
 			$image_crud->set_primary_key_field('Id');
 			$image_crud->set_url_field('Location');
 			$image_crud->set_table('gamesimage')
+				->set_relation_field('IdGame')
 				->set_image_path('assets/uploads');
-			$this->db->where('IdGame',$slug);
+
 			$output = $image_crud->render();
 
-			$data=$this->model_game->select($slug);
+			$output->data=$data;
 
 			$this->load->view('updateGame',$output);
 		}
-		
+
 		else
 		{
 			$this->load->helper('url');

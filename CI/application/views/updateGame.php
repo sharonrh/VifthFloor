@@ -15,13 +15,15 @@
 		<script type ="text/javacript" src="<?=base_url()?>js/jquery-1.11.1.js>"</script>
 		<script type ="text/javacript" src="<?=base_url()?>js/jquery-ui.min.js>"</script>
 
-		<!-- production
+		 production
 		<script type="text/javascript" src="<?=base_url()?>js/plupload/js/plupload.full.min.js>"</script>
 		<script type="text/javascript" src="<?=base_url()?>js/plupload/js/jquery.plupload.queue/jquery.plupload.queue.js>"</script>
 
 		<div id="uploadBox" title="UploadBox"></div> -->
+
 		<?php echo form_open('game/update/'.$data->Id); ?>
 		<table>
+			<input type="hidden" name="id" value="<?php echo $data->Id ?>" />
 			<tr>
 				<td>Title</td>
 				<td>:</td>
@@ -40,7 +42,7 @@
 			<tr>
 				<td>Available On</td>
 				<td>:</td>
-				<td><?php echo form_input('avail'),$data->AvailableOn;?></td>
+				<td><?php echo form_input('avail',$data->AvailableOn);?></td>
 			</tr>
 			<tr>
 				<td><?php echo form_submit('submit', 'Save','id="submit"') ?></td>
@@ -48,10 +50,5 @@
 		</table>
 		<?php echo form_close();?>
 		<?php echo $output; ?>
-		<?php echo $data; ?>
-		</br>
-		</br>
-
-		<a href="http://localhost/CI/index.php/login/logout">Logout</a>
 	</body>
 </html>

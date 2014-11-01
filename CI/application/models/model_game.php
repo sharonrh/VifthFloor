@@ -5,10 +5,10 @@ class Model_game extends CI_Model
 
 	function addNew()
 	{
-		$title = $this->input->post('title');
-		$date = $this->input->post('date');
-		$desc = $this->input->post('desc');
-		$avail = $this->input->post('avail');
+		$title=$this->input->post('title');
+		$date=date("Y/m/d");
+		$desc=$this->input->post('desc');
+		$avail=$this->input->post('avail');
 		$data = array(
 			'Title'=>$title,
 			'Description'=>$desc,
@@ -17,26 +17,22 @@ class Model_game extends CI_Model
 			);
 		$this->db->insert('games',$data);
 
-		$game = $this->db->where('Title',$title);
-		$game = $this->db->get('games');
-		
-		$take = $this->db->where('IdGame',0);
-		$take = $this->db->get('gamesImage');
-		
+		$game=$this->db->get_where('games',array('Title'=>$title));
+		$take=$this->db->get_where('gamesimage',array('IdGame'=>0));
 
 		if($game->num_rows()>0)
 		{
 			if($take->num_rows()>0)
 			{
-				foreach ($game -> result() as $single) {
-					foreach ($take->result() as $row)
-					{
-						$idImage = $row->Id;
-						$idGame = $single->Id;
-						$this->db->where('Id',$idImage);
-						$data = array('IdGame'=>$idGame);
-						$this->db->update('gamesimage',$data);
-					}
+				foreach ($take->result() as $row) 
+				{
+					$data[]=$row;
+					$data['IdGame']=$game['Id'];
+					$data = array(
+						'IdGame'=>$data['IdGame']
+						);
+
+					$this->db->update('gamesImage',$data);
 				}
 			}
 		}
@@ -64,10 +60,11 @@ class Model_game extends CI_Model
 	
 	function update($slug)
 	{
-		$title = $this->input->post('title');
-		$date = $this->input->post('date');
-		$desc = $this->input->post('desc');
-		$avail = $this->input->post('avail');
+		echo $slug;
+		$title=$this->input->post('title');
+		$date=date("Y/m/d");
+		$desc=$this->input->post('desc');
+		$avail=$this->input->post('avail');
 		$data = array(
 			'Title'=>$title,
 			'Description'=>$desc,
@@ -76,31 +73,6 @@ class Model_game extends CI_Model
 			);
 		$this->db->where('Id',$slug);
 		$this->db->update('games',$data);
-
-		$game = $this->db->where('Title',$title);
-		$game = $this->db->get('games');
-		
-		$take = $this->db->where('IdGame',0);
-		$take = $this->db->get('gamesImage');
-		
-		if($game->num_rows()>0)
-		{
-			if($take->num_rows()>0)
-			{
-				foreach ($game -> result() as $single) {
-					foreach ($take->result() as $row)
-					{
-						$idImage = $row->Id;
-						$idGame = $single->Id;
-						$this->db->where('Id',$idImage);
-						$data = array(
-							'IdGame'=>$idGame
-							);
-						$this->db->update('gamesimage',$data);
-					}
-				}
-			}
-		}
 	}
 
 	function select($slug)
