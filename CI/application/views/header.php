@@ -14,7 +14,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href=<?php echo site_url("profil.html");?>>PROFIL</a></li>
+                <li><a href=<?php echo site_url("profile");?>>PROFIL</a></li>
                 <li><a href=<?php echo site_url("game");?>>SHOWCASE</a></li>
                 <li><a href=<?php echo site_url("news");?>>NEWS</a></li>
                 <li><a href=<?php echo site_url("donasi.html");?>>DONASI</a></li>

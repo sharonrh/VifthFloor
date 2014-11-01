@@ -32,5 +32,11 @@ class Home extends CI_Controller
 		$data['bullet'] = array('satu satu','dua dua','tiga tiga','empat empat');
 		$this->load->view('home', $data);
 	}
+
+	function profile() 
+	{
+		$this->load->helper('url');
+		$this->load->view('profil');
+	}
 }
 ?>
