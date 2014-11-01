@@ -4,17 +4,15 @@ class Home extends CI_Controller
 
 	public function _home()
 	{
-
 		parent::_home();
 		$this->load->model();
-
 	}
 
 	function index()
 	{
-		$data['title']="Halo semuanya";
-		$data['headline']="Halo";
-		$data['content']="Buatlah suatu permainan pada halaman Web, sebut saja “TangkapTikus”, dengan
+		$data['title'] = "Halo semuanya";
+		$data['headline'] = "Halo";
+		$data['content'] = "Buatlah suatu permainan pada halaman Web, sebut saja “TangkapTikus”, dengan
 							Spesifikasi:
 							1. Buatlah petak-petak berukuran 5x5
 							2. Petak-petak tersebut digunakan sebagai tempat kemunculan gambar (sang
@@ -31,25 +29,8 @@ class Home extends CI_Controller
 							6. Program memiliki fasilitas untuk mengganti-ganti style (minimal 3 macam
 							style). Mekanisme penggantian diserahkan pada anda dan merupakan salah
 							satu komponen yang dinilai.";
-		$data['bullet']=array('satu satu','dua dua','tiga tiga','empat empat');
+		$data['bullet'] = array('satu satu','dua dua','tiga tiga','empat empat');
 		$this->load->view('home_view',$data);
-	}
-
-	function home_front()
-	{
-		echo "hello home_front";
-	}
-
-	function viewSome()
-	{
-		$this->load->model('model_news');
-		$data['records']=$this->model_news->takeSome();
-		$this->load->view('viewNews',$data);
-	}
-
-	function home_back()
-	{
-		echo "hello home_back";
 	}
 }
 ?>

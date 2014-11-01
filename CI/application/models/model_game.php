@@ -5,20 +5,20 @@ class Model_game extends CI_Model
 
 	function addNew()
 	{
-		$title=$this->input->post('title');
-		$date=date("Y/m/d");
-		$desc=$this->input->post('desc');
-		$avail=$this->input->post('avail');
+		$title = $this->input->post('title');
+		$date = date("Y/m/d");
+		$desc = $this->input->post('desc');
+		$avail = $this->input->post('avail');
 		$data = array(
-			'Title'=>$title,
-			'Description'=>$desc,
-			'ReleaseDate'=>$date,
-			'AvailableOn'=>$avail,
+			'Title' => $title,
+			'Description' => $desc,
+			'ReleaseDate' => $date,
+			'AvailableOn' => $avail,
 			);
 		$this->db->insert('games',$data);
 
-		$game=$this->db->get_where('games',array('Title'=>$title));
-		$take=$this->db->get_where('gamesimage',array('IdGame'=>0));
+		$game = $this->db->get_where('games',array('Title' => $title));
+		$take = $this->db->get_where('gamesimage',array('IdGame' => 0));
 
 		if($game->num_rows()>0)
 		{
@@ -29,7 +29,7 @@ class Model_game extends CI_Model
 					$data[]=$row;
 					$data['IdGame']=$game['Id'];
 					$data = array(
-						'IdGame'=>$data['IdGame']
+						'IdGame' => $data['IdGame']
 						);
 
 					$this->db->update('gamesImage',$data);
@@ -38,7 +38,7 @@ class Model_game extends CI_Model
 		}
 	}
 
-	function takeGame($slug=FALSE)
+	function takeGame($slug = FALSE)
 	{
 		$take = $this->db->get('games');
 		if($slug == FALSE){
@@ -53,7 +53,7 @@ class Model_game extends CI_Model
 
 		else
 		{
-			$query = $this->db->get_where('games',array('Id'=>$slug));
+			$query = $this->db->get_where('games',array('Id' => $slug));
 			return $query->row_array();
 		}
 	}
@@ -61,15 +61,15 @@ class Model_game extends CI_Model
 	function update($slug)
 	{
 		echo $slug;
-		$title=$this->input->post('title');
-		$date=date("Y/m/d");
-		$desc=$this->input->post('desc');
-		$avail=$this->input->post('avail');
+		$title = $this->input->post('title');
+		$date = date("Y/m/d");
+		$desc = $this->input->post('desc');
+		$avail = $this->input->post('avail');
 		$data = array(
-			'Title'=>$title,
-			'Description'=>$desc,
-			'ReleaseDate'=>$date,
-			'AvailableOn'=>$avail,
+			'Title' => $title,
+			'Description' => $desc,
+			'ReleaseDate' => $date,
+			'AvailableOn' => $avail,
 			);
 		$this->db->where('Id',$slug);
 		$this->db->update('games',$data);
@@ -77,12 +77,12 @@ class Model_game extends CI_Model
 
 	function select($slug)
 	{
-		return $this->db->get_where('games',array('Id'=>$slug))->row();
+		return $this->db->get_where('games',array('Id' => $slug))->row();
 	}
 
 	function takeSome($per_page, $page_id)
 	{	
-		$take=$this->db->get('games', $per_page, $page_id);
+		$take = $this->db->get('games', $per_page, $page_id);
 
 		return $take->result();
 	}
