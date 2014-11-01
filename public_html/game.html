@@ -13,6 +13,7 @@ and open the template in the editor.
         <link href="css/style.css" rel="stylesheet" media="screen">
         <script src="js/jquery-latest.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/bootstrap-lightbox.js"></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -47,7 +48,14 @@ and open the template in the editor.
                 <div class="game-screenshot">
                     <div class="row atas">
                         <div class="col-md-6">
-                            <img class="img-responsive" src="images/satu.jpg">
+                            <a data-toggle="lightbox" href="#demoLightbox">
+                                <img class="img-responsive" src="images/satu.jpg">
+                            </a>
+                            <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="lightbox-content">
+                                    <img src="images/icon2.png">
+                                </div>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <img class="img-responsive" src="images/satu.jpg">

@@ -1,4 +1,6 @@
 @import url('bootstrap.css');
+@import url('bootstrap-lightbox.css');
+@import url('style-profile.css');
 @import url(http://fonts.googleapis.com/css?family=Hind);
 
 html,
@@ -412,6 +414,9 @@ figure:hover:before {
     padding: 3px 0px 3px 33px;
     list-style: none;
     margin-left: -40px;
+}
+.game-screenshot .row {
+    margin-right: 0;
 }
 .game-screenshot .atas {
     padding-top: 50px;
