@@ -42,6 +42,6 @@ $route['default_controller'] = "home";
 $route['404_override'] = '';
 
 $route['profile'] = "home/profile";
-
+$route['donasi'] = "home/donasi";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

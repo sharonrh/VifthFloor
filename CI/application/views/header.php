@@ -17,7 +17,7 @@
                 <li><a href=<?php echo site_url("profile");?>>PROFIL</a></li>
                 <li><a href=<?php echo site_url("game");?>>SHOWCASE</a></li>
                 <li><a href=<?php echo site_url("news");?>>NEWS</a></li>
-                <li><a href=<?php echo site_url("donasi.html");?>>DONASI</a></li>
+                <li><a href=<?php echo site_url("donasi");?>>DONASI</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
