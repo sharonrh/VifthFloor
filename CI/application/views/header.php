@@ -8,12 +8,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="home"><img id="brand" src=<?php echo base_url("/assets/images/logo.png");?> alt="Vifth Floor Logo"></a>
+            <a class="navbar-brand" href="home"><img id="brand" src=<?php echo base_url("/assets/images/logo-web.png");?> alt="Vifth Floor Logo"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+                <li><a href=<?php echo site_url("home");?>>HOME</a></li>
                 <li><a href=<?php echo site_url("profile");?>>PROFIL</a></li>
                 <li><a href=<?php echo site_url("game");?>>SHOWCASE</a></li>
                 <li><a href=<?php echo site_url("news");?>>NEWS</a></li>

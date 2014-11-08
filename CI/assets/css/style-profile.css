@@ -75,7 +75,7 @@ hr.hr-misi:after {
 }
 
 #profil-container{
-	padding-bottom: 500px;
+	padding-bottom: 1px;
 }
 
 h1.center{
@@ -85,7 +85,6 @@ h1.center{
 
 .button-donasi{
 	text-align: center;
-	margin-left: 41%;
 	height: 50px;
 	width: 110px;
 	color: white;
