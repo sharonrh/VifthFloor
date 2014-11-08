@@ -10,33 +10,29 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <!-- Bootstrap -->
-        <link href="css/style.css" rel="stylesheet" media="screen">
-        <script src="js/jquery-latest.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="js/bootstrap-lightbox.js"></script>
+        <link href=<?php echo base_url("assets/css/style.css");?> rel="stylesheet" media="screen">
+        <script src=<?php echo base_url("assets/js/jquery-latest.min.js");?> type="text/javascript"></script>
+        <script type="text/javascript" src=<?php echo base_url("assets/js/bootstrap.js");?>></script>
+        <script type="text/javascript" src=<?php echo base_url("assets/js/bootstrap-lightbox.js");?>></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-        <script>
-            $(function() {
-                $("header").load("header.html");
-                $("footer").load("footer.html");
-            });
-        </script>
     </head>
     <body>
+        <?php $this->load->view('header'); ?>
         <div id="container">
             <header></header>
             <div id="main">
                 <div class="game-image">
-                    <img class="img-responsive" src="images/satu.jpg">
+                    <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                 </div>
                 <div class="game-about">
-                    <p>Monsters terrorize Grandma’s backyard, and now she is pissed. Join grandma to shoot and repel the unending wave of monsters!</p>
-                    <p>Backyard Madness is a casual action game about tapping the mutant invasion to Granny’s Backyard. Available for OVI Store and is also adaptable to various feature phones.</p>
+                    <p> 
+                        <?php echo $description;?>
+                    </p>
 
                     <ul>
                         <li>Feature 1</li>
@@ -49,24 +45,24 @@ and open the template in the editor.
                     <div class="row atas">
                         <div class="col-md-6">
                             <a data-toggle="lightbox" href="#demoLightbox">
-                                <img class="img-responsive" src="images/satu.jpg">
+                                <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                             </a>
                             <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="lightbox-content">
-                                    <img src="images/icon2.png">
+                                    <img src=<?php echo base_url("assets/images/icon2.png");?>>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" src="images/satu.jpg">
+                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                         </div>
                     </div>
                     <div class="row bawah">
                         <div class="col-md-6">
-                            <img class="img-responsive" src="images/satu.jpg">
+                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                         </div>
                         <div class="col-md-6">
-                            <img class="img-responsive" src="images/satu.jpg">
+                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                         </div>
                     </div>
                 </div>
@@ -74,7 +70,9 @@ and open the template in the editor.
                     <p>Available On</p>
                 </div>
             </div>
-            <footer></footer>
+            <footer>
+                <?php $this->load->view('footer'); ?>
+            </footer>
         </div>
     </body>
 </html>
