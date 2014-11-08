@@ -88,8 +88,11 @@ h1.center{
 	height: 50px;
 	width: 110px;
 	color: white;
-	background-color: #0066ff;
+	background-color: #DB0000;
 	border: none;
+}
+.button-donasi:hover {
+	box-shadow: 0 -2px 2px 1px #B00B0B inset;
 }
 
 p.center{

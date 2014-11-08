@@ -33,9 +33,9 @@ body {
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
-    color: black;
-    background-color: white;
-    /*box-shadow: 0 -2px 2px 1px #B00B0B inset;*/
+    color: white;
+    background-color: #DB0000;
+    box-shadow: 0 -2px 2px 1px #B00B0B inset;
 }
 .navbar-brand {
     padding: 0;
