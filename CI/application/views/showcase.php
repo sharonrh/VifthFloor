@@ -54,10 +54,10 @@ and open the template in the editor.
                     <?php foreach ($records as $row): ?>
 
                         <div class="row showcase margin-bottom-50">
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-xs-3">
                                 <img class="img-responsive" src=<?php echo base_url("assets/images/meh.png");?>>
                             </div>
-                            <div class="col-md-9">
+                            <div class="col-md-9 col-xs-9">
                                 <div class="game-title">
                                     <h2><a href=<?php echo site_url("/game/view/$row->Id");?>><?php echo $row->Title; ?></a></h2>
                                 </div>

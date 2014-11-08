@@ -43,7 +43,7 @@ and open the template in the editor.
                 </div>
                 <div class="game-screenshot">
                     <div class="row atas">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-6">
                             <a data-toggle="lightbox" href="#demoLightbox">
                                 <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                             </a>
@@ -53,15 +53,15 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-6">
                             <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                         </div>
                     </div>
                     <div class="row bawah">
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-6">
                             <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 col-xs-6">
                             <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
                         </div>
                     </div>
