@@ -41,7 +41,7 @@ and open the template in the editor.
                             </div>
                         </div>
                         <div class="item">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/dua.jpg");?>alt="">
+                            <img class="img-responsive" src=<?php echo base_url("assets/images/dua.jpg");?> alt="">
                             <div class="carousel-caption">
                             </div>
                         </div>
