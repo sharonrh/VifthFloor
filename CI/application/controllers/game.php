@@ -41,7 +41,7 @@ class Game extends CI_Controller
 
 		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
 		
-		$this->load->view('showcase', $data);
+		$this->load->view('game', $data);
 	}
 
 	function view($slug)
@@ -49,7 +49,7 @@ class Game extends CI_Controller
 		$data['games'] = $this->model_game->takeGame($slug);
 		$data['title'] = $data['games']['Title'];
 		$data['description'] = $data['games']['Description'];
-		$this->load->view('game',$data);
+		$this->load->view('viewGame',$data);
 	}
 
 	function addNew()
