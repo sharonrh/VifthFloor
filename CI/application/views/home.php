@@ -103,10 +103,8 @@ and open the template in the editor.
                         <div class="col-sm-1">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="box-information-index">
-                                        <div class="view-more">
-                                            <a href=<?php echo site_url("news");?>><img src=<?php echo base_url("assets/images/right-arrow2.png");?>></a>
-                                        </div>
+                                    <div class="view-more">
+                                        <a href=<?php echo site_url("news");?>>More ++</a>
                                     </div>
                                 </div>
                             </div>
