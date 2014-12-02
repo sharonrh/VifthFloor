@@ -57,6 +57,13 @@ class Model_game extends CI_Model
 			return $query->row_array();
 		}
 	}
+
+	function takeImage($slug)
+	{
+		echo $slug;
+		$query = $this->db->get_where('gamesImage',array('IdGame' => $slug));
+		return $query->result();
+	}
 	
 	function update($slug)
 	{

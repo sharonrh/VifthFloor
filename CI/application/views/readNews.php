@@ -20,36 +20,26 @@
             <header class="margin-bottom-30"></header>
             <div id="main-container">
                 <div class="container">
-                    <div class="news-title margin-bottom-50">
-                        <h1>NEWS</h1>
-                    </div>
-                    <?php foreach ($records as $row): ?>
-                    <div class="row margin-bottom-30">
-                        <div class="col-sm-3">
-                            <img class="img-responsive" src="../../assets/images/icon1.png">
+                    <div class="news-detail">
+                        <div class="news-detail-title margin-bottom-30">
+                            <h1><?php echo $title;?></h1>
+                            <p class="posted"><?php echo $pubDate;?></p>
                         </div>
-                        <div class="col-sm-9 news-content">
-                            <h2><a href="news-details.html"><?php echo $row->Title; ?></a></h2>
-                            <p>
-                            	<?php $short = $row->Content; 
-								$short=character_limiter($short,100);?>
-								<?php echo $short;?>
-							</p>
-                            <a href="<?php echo base_url();?>/index.php/news/view/<?php echo $row->Id;?>" class="read-more-link">Read More</a>
+
+                        <article>
+                            <?php echo $content;?>
+                        </article>
+
+                        <div class="text-center">
+                            <ul class="pagination">
+                                <li><a href="#">&laquo;</a></li>
+                                <li><a href="#">&raquo;</a></li>
+                            </ul>
                         </div>
-                    </div>
-					<?php endforeach; ?>
-			                    
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <?php echo $page;?>
-                        </ul>
                     </div>
                 </div>
             </div>
-            <footer>
-                    <?php $this->load->view('footer'); ?>
-            </footer>
+            <?php $this->load->view('footer'); ?>
         </div>
     </body>
 </html>

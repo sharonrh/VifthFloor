@@ -6,7 +6,7 @@ class Login extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('model_login');
-
+		$this->load->helper('url');
 	}
 
 	public function login()
