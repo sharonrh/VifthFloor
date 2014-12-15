@@ -41,11 +41,14 @@ and open the template in the editor.
                         <li>Feature 4</li>
                     </ul>
                 </div>
+                <?php foreach ($images as $row): ?>
+                
+                
                 <div class="game-screenshot">
                     <div class="row atas">
-                        <div class="col-md-6 col-xs-6">
+                        <div class="col-md-6">
                             <a data-toggle="lightbox" href="#demoLightbox">
-                                <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
+                                <img class="img-responsive" src="<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?>"/>
                             </a>
                             <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="lightbox-content">
@@ -53,22 +56,9 @@ and open the template in the editor.
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-xs-6">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
-                        </div>
-                    </div>
-                    <div class="row bawah">
-                        <div class="col-md-6 col-xs-6">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
-                        </div>
-                        <div class="col-md-6 col-xs-6">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
-                        </div>
                     </div>
                 </div>
-                <div class="game-available">
-                    <p>Available On</p>
-                </div>
+                <?php endforeach; ?>
             </div>
             <footer>
                 <?php $this->load->view('footer'); ?>

@@ -49,6 +49,8 @@ class Game extends CI_Controller
 		$data['games'] = $this->model_game->takeGame($slug);
 		$data['title'] = $data['games']['Title'];
 		$data['description'] = $data['games']['Description'];
+		$data['images']=$this->model_game->takeImage($slug);
+
 		$this->load->view('viewGame',$data);
 	}
 
@@ -75,7 +77,6 @@ class Game extends CI_Controller
 				->set_image_path('assets/uploads');
 			$this->db->where('IdGame',0);
 			$output = $image_crud->render();
-			$output->data = "Hellooooo";
 
 			$this->load->view('addGame',$output);
 		}
