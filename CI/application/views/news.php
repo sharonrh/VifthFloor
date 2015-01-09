@@ -38,11 +38,11 @@ and open the template in the editor.
                             <img class="img-responsive" src=<?php echo base_url("assets/images/icon1.png");?> >
                         </div>
                         <div class="col-sm-9 col-xs-9 news-content">
-                            <h2><a href="news-details.html"><?php echo $row->Title; ?></a></h2>
+                            <h2><a href=<?php echo site_url("/news/view/$row->Id");?>> <?php echo $row->Title; ?></a></h2>
                             <p>
                                 <?php 
                                     $short = $row->Content; 
-                                    $short = character_limiter($short, 200);
+                                    $short = character_limiter($short, 500);
                                     echo $short;
                                 ?>
                             </p>

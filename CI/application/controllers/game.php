@@ -65,7 +65,6 @@ class Game extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_game->addNew();
-				$this->load->helper('url');
 				redirect('/game/index');
 			}
 
