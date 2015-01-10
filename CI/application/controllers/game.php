@@ -41,7 +41,7 @@ class Game extends CI_Controller
 		$data['slides'] = $this->model_game->takeSlide();
 		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
 		
-		$this->load->view('game', $data);
+		$this->load->view('game/index', $data);
 	}
 
 	function view($slug)
@@ -51,7 +51,7 @@ class Game extends CI_Controller
 		$data['description'] = $data['games']['Description'];
 		$data['images']=$this->model_game->takeImage($slug);
 
-		$this->load->view('viewGame',$data);
+		$this->load->view('game/viewGame',$data);
 	}
 
 	function addNew()
@@ -77,7 +77,7 @@ class Game extends CI_Controller
 			$this->db->where('IdGame',0);
 			$output = $image_crud->render();
 
-			$this->load->view('addGame',$output);
+			$this->load->view('game/addGame',$output);
 		}
 
 		else
@@ -112,7 +112,6 @@ class Game extends CI_Controller
 		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
 		
 		$this->load->view('adminGame',$data);
-
 	}
 
 	function update($slug)
@@ -148,7 +147,7 @@ class Game extends CI_Controller
 
 			$output->data = $data;
 
-			$this->load->view('updateGame',$output);
+			$this->load->view('game/updateGame',$output);
 		}
 
 		else

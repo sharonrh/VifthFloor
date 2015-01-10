@@ -20,7 +20,6 @@ class News extends CI_Controller
 	{
 		$total_rows = $this->db->get('news');
 		$this->load->library('pagination');
-		$this->load->helper('url');
 		$this->load->helper('text');
 
 		$config['base_url'] = base_url()."index.php/news/index";
@@ -42,7 +41,7 @@ class News extends CI_Controller
 
 		$data['records'] = $this->model_news->takeSome($config['per_page'],$id);
 
-		$this->load->view('news', $data);
+		$this->load->view('news/index', $data);
 	}
 
 	function view($slug)
@@ -51,7 +50,7 @@ class News extends CI_Controller
 		$data['title'] = $data['news']['Title'];
 		$data['content'] = $data['news']['Content'];
 		$data['pubDate'] = $data['news']['PublishedDate'];
-		$this->load->view('viewNews',$data);
+		$this->load->view('news/viewNews',$data);
 	}
 
 	function allNews($id=NULL)
@@ -96,15 +95,12 @@ class News extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_news->addNew();
-				$this->load->helper('url');
 				redirect('/news/index');
 			}
 
-			$this->load->helper('url');
-
 			$data['category']=$this->model_news->fillDropCategory();
 
-			$this->load->view('addNews',$data);
+			$this->load->view('news/addNews',$data);
 		}
 
 		else
@@ -131,12 +127,10 @@ class News extends CI_Controller
 			
 			$data['news'] = $this->model_news->select($slug);
 			$data['category'] = $this->model_news->fillDropCategory();
-			$this->load->view('updateNews',$data);
+			$this->load->view('news/updateNews',$data);
 		}
-		
 		else
 		{
-			$this->load->helper('url');
 			redirect('/login/index');
 		}
 	}
