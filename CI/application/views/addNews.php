@@ -73,6 +73,6 @@
 		</br>
 		</br>
 
-		<a href="http://localhost/CI/index.php/login/logout">Logout</a>
+		<a href="http://localhost/VifthFloor/CI/index.php/login/logout">Logout</a>
 	</body>
 </html>

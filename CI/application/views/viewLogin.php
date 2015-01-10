@@ -44,7 +44,7 @@ and open the template in the editor.
                                     <br class="top-10"></br>
 
                                     <?php $pass=array('name'=>'password','placeholder'=>'Password', 'class'=>'form-control');?>
-                                    <?php echo form_input($pass);?>
+                                    <?php echo form_password($pass);?>
                                     
                                   </div>
                                   <br class="top-10"></br>
