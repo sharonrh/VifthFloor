@@ -54,6 +54,35 @@ class News extends CI_Controller
 		$this->load->view('viewNews',$data);
 	}
 
+	function allNews($id=NULL)
+	{
+		$total_rows = $this->db->get('news');
+		$this->load->library('pagination');
+		$this->load->helper('url');
+		$this->load->helper('text');
+
+		$config['base_url'] = base_url()."index.php/news/allNews";
+		$config['total_rows'] = $total_rows->num_rows();
+		$config['per_page'] = '3';
+		$config['first_page'] = 'First';
+		$config['last_page'] = 'Last';
+		$config['next_page'] = '&laquo;';
+		$config['prev_page'] = '&laquo;';
+		$config['num_tag_open'] = $config['prev_tag_open'] = $config['first_tag_open'] = "<li>";
+		$config['next_tag_open'] = $config['last_tag_open'] = "<li>";
+		$config['cur_tag_open'] = "<li><a href='#'>";
+		$config['num_tag_close'] = $config['prev_tag_close'] = $config['first_tag_close'] = "</li>";
+		$config['next_tag_close'] = $config['last_tag_close'] = "</li>";
+		$config['cur_tag_close'] = "</a></li>";
+
+		$this->pagination->initialize($config);
+		$data['page'] = $this->pagination->create_links();
+
+		$data['records'] = $this->model_news->takeSome($config['per_page'],$id);
+
+		$this->load->view('adminNews', $data);
+	}
+
 	function addNew()
 	{
 		$result = $this->model_login->isLogin();

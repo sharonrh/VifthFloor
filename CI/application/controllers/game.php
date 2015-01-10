@@ -86,11 +86,32 @@ class Game extends CI_Controller
 		}
 	}
 
-	function allGame() {
+	function allGame($id = NULL) 
+	{
+		$total_rows = $this->db->get('games');
+		$this->load->library('pagination');
+		$this->load->helper('text');
 
-		$data['games'] = $this->model_game->takeGame();
-		$this->load->helper('form');
-		$this->load->view('allGame',$data);
+		$config['base_url'] = base_url()."index.php/game/allGame";
+		$config['total_rows'] = $total_rows->num_rows();
+		$config['per_page'] = '3';
+		$config['first_page'] = 'First';
+		$config['last_page'] = 'Last';
+		$config['next_page'] = '&laquo;';
+		$config['prev_page'] = '&laquo;';
+		$config['num_tag_open'] = $config['prev_tag_open'] = $config['first_tag_open'] = "<li>";
+		$config['next_tag_open'] = $config['last_tag_open'] = "<li>";
+		$config['cur_tag_open'] = "<li><a href='#'>";
+		$config['num_tag_close'] = $config['prev_tag_close'] = $config['first_tag_close'] = "</li>";
+		$config['next_tag_close'] = $config['last_tag_close'] = "</li>";
+		$config['cur_tag_close'] = "</a></li>";
+
+		$this->pagination->initialize($config);
+		$data['page'] = $this->pagination->create_links();
+		$data['slides'] = $this->model_game->takeSlide();
+		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
+		
+		$this->load->view('adminGame',$data);
 
 	}
 
