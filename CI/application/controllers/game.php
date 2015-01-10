@@ -111,7 +111,7 @@ class Game extends CI_Controller
 		$data['slides'] = $this->model_game->takeSlide();
 		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
 		
-		$this->load->view('adminGame',$data);
+		$this->load->view('game/adminGame',$data);
 	}
 
 	function update($slug)

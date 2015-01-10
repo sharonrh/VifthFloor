@@ -79,7 +79,7 @@ class News extends CI_Controller
 
 		$data['records'] = $this->model_news->takeSome($config['per_page'],$id);
 
-		$this->load->view('adminNews', $data);
+		$this->load->view('news/adminNews', $data);
 	}
 
 	function addNew()
