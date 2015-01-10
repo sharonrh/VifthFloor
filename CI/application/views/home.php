@@ -35,69 +35,51 @@ and open the template in the editor.
                     </ol>
 
                     <!-- Wrapper for slides -->
+
                     <div class="carousel-inner">
-                        <div class="item active">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?> alt="">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/dua.jpg");?> alt="">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
-                        <div class="item">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/tiga.jpg");?> alt="">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
+                        <?php $count=0; ?>
+                            <?php foreach ($slides as $row): ?>
+
+                                <?php if ($count==0) :?>
+                                    <div class="item active">
+                                        <img class="img-responsive" src=<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?> alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                
+                                <?php else: ?>
+                                    <div class="item">
+                                        <img class="img-responsive" src=<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?> alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                <?php endif;?>
+                                
+                                <?php $count++; ?>
+
+                            <?php endforeach; ?>            
+                        
                     </div>
                 </div>
 
                 <div id="latest-news">
                     <div class="row">
+
                         <div class="col-sm-11">
                             <div class="row">
+                                <?php foreach ($news as $row): ?>
                                 <div class="col-sm-3 padding-left-15 padding-right-5">
                                     <figure class="cap-top">
                                         <a href="#" class="thumbnail">
-                                            <img src=<?php echo base_url("assets/images/icon1.png");?>>
+                                            <img src=<?php echo base_url();?>/assets/uploads/<?php echo $row->Thumbnail;?>;?>>
                                             <div class="slide-caption">
-                                                <p class="isi-caption">We are open in Hellofest on November!</p>
+                                                <p class="isi-caption"><?php echo $row->Title;?></p>
                                             </div>
                                         </a>
                                     </figure>
                                 </div>
-                                <div class="col-sm-3 padding-right-5">
-                                    <figure class="cap-top">
-                                        <a href="#" class="thumbnail">
-                                            <img src=<?php echo base_url("assets/images/icon2.png");?>>
-                                            <div class="slide-caption">
-                                                <p class="isi-caption">Judul</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="col-sm-3 padding-right-5">
-                                    <figure class="cap-top">
-                                        <a href="#" class="thumbnail">
-                                            <img src=<?php echo base_url("assets/images/icon3.png");?>>
-                                            <div class="slide-caption">
-                                                <p class="isi-caption">Judul</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
-                                <div class="col-sm-3 padding-right-0">
-                                    <figure class="cap-top">
-                                        <a href="#" class="thumbnail">
-                                            <img src=<?php echo base_url("assets/images/icon4.png");?>>
-                                            <div class="slide-caption">
-                                                <p class="isi-caption">Judul</p>
-                                            </div>
-                                        </a>
-                                    </figure>
-                                </div>
+                                <?php endforeach; ?>
+                                
                             </div>
                         </div>
                         <div class="col-sm-1">

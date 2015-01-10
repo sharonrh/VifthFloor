@@ -38,16 +38,27 @@ and open the template in the editor.
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                            <div class="item active">
-                                <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?> alt="">
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive" src=<?php echo base_url("assets/images/dua.jpg");?> alt="">
-                                <div class="carousel-caption">
-                                </div>
-                            </div>
+                            <?php $count=0; ?>
+                            <?php foreach ($slides as $row): ?>
+
+                                <?php if ($count==0) :?>
+                                    <div class="item active">
+                                        <img class="img-responsive" src=<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?> alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                
+                                <?php else: ?>
+                                    <div class="item">
+                                        <img class="img-responsive" src=<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?> alt="">
+                                        <div class="carousel-caption">
+                                        </div>
+                                    </div>
+                                <?php endif;?>
+                                
+                                <?php $count++; ?>
+
+                            <?php endforeach; ?>
                         </div>
                     </div>
 

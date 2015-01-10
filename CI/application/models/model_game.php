@@ -93,5 +93,12 @@ class Model_game extends CI_Model
 
 		return $take->result();
 	}
+
+	function takeSlide()
+	{
+		$query = $this->db->query("SELECT * FROM gamesImage;");
+
+		return $query->result();
+	}
 }
 ?>

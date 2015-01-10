@@ -6,6 +6,7 @@ class Home extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->model('model_home');
 	}
 
 	public function _home()
@@ -15,7 +16,9 @@ class Home extends CI_Controller
 
 	function index()
 	{
-		$this->load->view('home');
+		$data['news']=$this->model_home->takeNews();
+		$data['slides']=$this->model_home->takeSlide();
+		$this->load->view('home',$data);
 	}
 
 	function profile() 

@@ -38,7 +38,7 @@ class Game extends CI_Controller
 
 		$this->pagination->initialize($config);
 		$data['page'] = $this->pagination->create_links();
-
+		$data['slides'] = $this->model_game->takeSlide();
 		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
 		
 		$this->load->view('game', $data);
