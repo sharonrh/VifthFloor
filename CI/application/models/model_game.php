@@ -26,12 +26,12 @@ class Model_game extends CI_Model
 			{
 				foreach ($take->result() as $row) 
 				{
-					$data[]=$row;
-					$data['IdGame']=$game['Id'];
+					
+					$data['IdGame']=$game->result()[0]->Id;
 					$data = array(
-						'IdGame' => $data['IdGame']
-						);
-
+							'IdGame' => $data['IdGame']
+							);
+					$this->db->where('Id',$row->Id);
 					$this->db->update('gamesImage',$data);
 				}
 			}
