@@ -16,7 +16,10 @@
 			</td>
 		</tr>
 
-		<?php endforeach; ?>		
+		<?php endforeach; ?>
+		<ul>
+             <?php echo $page;?>
+        </ul> 		
 	</table>
 	</body>
 

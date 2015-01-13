@@ -36,11 +36,26 @@ class Model_news extends CI_Model
 		$date=date("Y/m/d");
 		$content=$this->input->post('content');
 		$creator=1;
+
+		$config['upload_path'] = '././assets/uploads/newsThumbnail';
+ 		$config['allowed_types'] = 'gif|jpg|png';
+	  	$config['max_size'] = '100000';
+	    $config['max_width'] = '2000';
+		$config['max_height'] = '2000';
+
+	  	$this->load->library('upload', $config);
+
+	  	$this->upload->initialize($config); 
+		$this->upload->do_upload('thumbnail');
+		$upload_data = $this->upload->data();
+	  	$thumb=$upload_data['file_name'];
+
 		$data = array(
 			'Title'=>$title,
 			'PublishedDate'=>$date,
 			'Content'=>$content,
 			'CreatorId'=>$creator,
+			'Thumbnail'=>$thumb
 			);
 		$this->db->insert('news',$data);
 	}
@@ -51,11 +66,26 @@ class Model_news extends CI_Model
 		$content=$this->input->post('content');
 		$modDate=date("Y/m/d");
 		$creator=1;
+
+		$config['upload_path'] = '././assets/uploads/newsThumbnail';
+ 		$config['allowed_types'] = 'gif|jpg|png';
+	  	$config['max_size'] = '100000';
+	    $config['max_width'] = '2000';
+		$config['max_height'] = '2000';
+
+	  	$this->load->library('upload', $config);
+
+	  	$this->upload->initialize($config); 
+		$this->upload->do_upload('thumbnail');
+		$upload_data = $this->upload->data();
+	  	$thumb=$upload_data['file_name'];
+
 		$data = array(
 			'Title'=>$title,
 			'Content'=>$content,
 			'CreatorId'=>$creator,
-			'ModifiedDate'=>$modDate
+			'ModifiedDate'=>$modDate,
+			'Thumbnail'=>$thumb
 			);
 		$this->db->where('Id',$slug);
 		$this->db->update('news',$data);

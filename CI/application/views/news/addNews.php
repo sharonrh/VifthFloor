@@ -17,7 +17,7 @@
 
 	<body>
 
-		<?php echo form_open('news/addNew'); ?>
+		<?php echo form_open_multipart('news/addNew'); ?>
 		<table>
 			<tr>
 				<td>Title</td>
@@ -28,6 +28,10 @@
 				<td>Content</td>
 				<td>:</td>
 				<td><?php echo form_textarea('content');?></td>
+			</tr>
+			<tr>
+				<td>Add Thumbnail</td>
+				<td><?php echo form_upload('thumbnail'); ?></td>
 			</tr>
 			<tr>
 				<td><?php echo form_submit('submit', 'Save','id="submit"') ?></td>
