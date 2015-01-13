@@ -45,12 +45,12 @@ $route['profile'] = "home/profile";
 $route['donasi'] = "home/donasi";
 $route['dashboard'] = "home/dashboard";
 
-$route['admin/game'] = "game/dashboard";
-$route['admin/game/new'] = "game/addNew";
-$route['admin/game/update/(:num)'] = "game/update/$1";
-$route['admin/news'] = "news/dashboard";
-$route['admin/news/new'] = "news/addNew";
-$route['admin/news/update/(:num)'] = "news/update/$1";
+$route['dashboard/game'] = "game/dashboard";
+$route['dashboard/game/new'] = "game/addNew";
+$route['dashboard/game/update/(:num)'] = "game/update/$1";
+$route['dashboard/news'] = "news/dashboard";
+$route['dashboard/news/new'] = "news/addNew";
+$route['dashboard/news/update/(:num)'] = "news/update/$1";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
