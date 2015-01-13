@@ -23,7 +23,7 @@ and open the template in the editor.
     <body>
         <div id="container">
             <header>
-                <?php $this->load->view('header'); ?>
+                <?php $this->load->view('admin/header-dashboard'); ?>
             </header>
             <div id="main">
                 <div id="dashboard">

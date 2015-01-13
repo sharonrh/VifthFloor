@@ -47,10 +47,12 @@ $route['dashboard'] = "home/dashboard";
 $route['dashboard/donasi'] = "home/donasi";
 
 $route['dashboard/game'] = "game/dashboard";
+$route['dashboard/game/(:num)'] = "game/dashboard/$1";
 $route['dashboard/game/new'] = "game/addNew";
 $route['dashboard/game/update/(:num)'] = "game/update/$1";
 $route['dashboard/game/slider'] = "game/change_slider";
 $route['dashboard/news'] = "news/dashboard";
+$route['dashboard/news/(:num)'] = "news/dashboard/$1";
 $route['dashboard/news/new'] = "news/addNew";
 $route['dashboard/news/update/(:num)'] = "news/update/$1";
 
