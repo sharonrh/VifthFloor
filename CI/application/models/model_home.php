@@ -9,7 +9,7 @@ class Model_home extends CI_Model
 
 	function takeNews()
 	{
-		$query = $this->db->query("SELECT * FROM news LIMIT 4;");
+		$query = $this->db->query("SELECT * FROM news ORDER BY PublishedDate DESC LIMIT 4;");
 		return $query->result();
 	}
 
