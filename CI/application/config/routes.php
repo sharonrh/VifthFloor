@@ -43,8 +43,6 @@ $route['404_override'] = '';
 
 $route['profile'] = "home/profile";
 $route['donasi'] = "home/donasi";
-$route['dashboard'] = "home/dashboard";
-$route['dashboard/donasi'] = "home/donasi";
 
 $route['dashboard/game'] = "game/dashboard";
 $route['dashboard/game/(:num)'] = "game/dashboard/$1";

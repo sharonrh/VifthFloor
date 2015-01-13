@@ -59,39 +59,48 @@ class News extends CI_Controller
 
 	function dashboard($id=NULL)
 	{
-		$total_rows = $this->db->get('news');
-		$this->load->library('pagination');
-		$this->load->helper('text');
+		$loggedIn = $this->model_login->isLogin();
 
-		$config['base_url'] = base_url()."index.php/dashboard/news";
-		$config['total_rows'] = $total_rows->num_rows();
-		$config['per_page'] = '20';
-		$config['first_page'] = 'First';
-		$config['last_page'] = 'Last';
-		$config['next_page'] = '&laquo;';
-		$config['prev_page'] = '&laquo;';
-		$config['num_tag_open'] = $config['prev_tag_open'] = $config['first_tag_open'] = "<li>";
-		$config['next_tag_open'] = $config['last_tag_open'] = "<li>";
-		$config['cur_tag_open'] = "<li><a href='#'>";
-		$config['num_tag_close'] = $config['prev_tag_close'] = $config['first_tag_close'] = "</li>";
-		$config['next_tag_close'] = $config['last_tag_close'] = "</li>";
-		$config['cur_tag_close'] = "</a></li>";
+		if($loggedIn)
+		{
+			$total_rows = $this->db->get('news');
+			$this->load->library('pagination');
+			$this->load->helper('text');
 
-		$this->pagination->initialize($config);
-		$data['page'] = $this->pagination->create_links();
+			$config['base_url'] = base_url()."index.php/dashboard/news";
+			$config['total_rows'] = $total_rows->num_rows();
+			$config['per_page'] = '20';
+			$config['first_page'] = 'First';
+			$config['last_page'] = 'Last';
+			$config['next_page'] = '&laquo;';
+			$config['prev_page'] = '&laquo;';
+			$config['num_tag_open'] = $config['prev_tag_open'] = $config['first_tag_open'] = "<li>";
+			$config['next_tag_open'] = $config['last_tag_open'] = "<li>";
+			$config['cur_tag_open'] = "<li><a href='#'>";
+			$config['num_tag_close'] = $config['prev_tag_close'] = $config['first_tag_close'] = "</li>";
+			$config['next_tag_close'] = $config['last_tag_close'] = "</li>";
+			$config['cur_tag_close'] = "</a></li>";
 
-		$data['records'] = $this->model_news->takeSome($config['per_page'],$id);
+			$this->pagination->initialize($config);
+			$data['page'] = $this->pagination->create_links();
 
-		$this->load->view('news/dashboard', $data);
+			$data['records'] = $this->model_news->takeSome($config['per_page'],$id);
+
+			$this->load->view('news/dashboard', $data);
+		}
+		else
+		{
+			redirect('/login/index');
+		}
 	}
 
 	function addNew()
 	{
-		$result = $this->model_login->isLogin();
+		$loggedIn = $this->model_login->isLogin();
 
 		$data = array();
 
-		if($result)
+		if($loggedIn)
 		{
 			$this->load->helper('form');
 
@@ -114,9 +123,9 @@ class News extends CI_Controller
 
 	function update($slug)
 	{
-		$result = $this->model_login->isLogin();
+		$loggedIn = $this->model_login->isLogin();
 
-		if($result)
+		if($loggedIn)
 		{
 			$this->load->helper('form');
 

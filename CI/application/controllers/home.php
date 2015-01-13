@@ -30,11 +30,5 @@ class Home extends CI_Controller
 	{
 		$this->load->view('donasi');
 	}
-
-	function dashboard()
-	{
-		$this->load->view('admin/dashboard');
-	}
-
 }
 ?>

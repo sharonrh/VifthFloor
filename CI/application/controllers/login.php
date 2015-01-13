@@ -18,20 +18,18 @@ class Login extends CI_Controller
 
 	function index()
 	{
-		$result=$this->model_login->isLogin();
+		$loggedIn=$this->model_login->isLogin();
 		
-		if(!$result)
+		if(!$loggedIn)
 		{
 			$msg="";
 			$data['msg']=$msg;
 			$this->load->helper('form');
 			$this->load->view('viewLogin',$data);
 		}
-
 		else
 		{
-			$this->load->helper('url');
-			redirect('/home/dashboard/');
+			redirect('/dashboard');
 		}
 		
 	}
@@ -45,11 +43,9 @@ class Login extends CI_Controller
 			$msg='<font color=red>Invalid username and/or password.</font><br />';
 			$this->index($msg);
 		}
-
 		else
 		{
-			$this->load->helper('url');
-			redirect('/home/dashboard/');
+			redirect('/dashboard/');
 		}
 	}
 
