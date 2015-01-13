@@ -36,7 +36,7 @@ and open the template in the editor.
                     <div class="border-bottom-dashed-2 margin-bottom-30"></div>
                     <div class="row margin-bottom-30">
                         <div class="col-sm-3 col-xs-3">
-                            <img class="img-responsive" src=<?php echo base_url("assets/images/icon1.png");?> >
+                            <img class="img-responsive" src='<?php echo base_url();?>assets/uploads/newsThumbnail/<?php echo $row->Thumbnail;?>' >
                         </div>
                         <div class="col-sm-9 col-xs-9 news-content">
                             <h2><a href=<?php echo site_url("/news/view/$row->Id");?>> <?php echo $row->Title; ?></a></h2>

@@ -44,30 +44,14 @@ and open the template in the editor.
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach ($records as $row): ?>
                                     <tr>
                                         <td class="number">1.</td>
-                                        <td><a href="#">Dasar-dasar pemrograman</a></td>
-                                        <td class="action"><a href="edit-post.html">Edit</a></td>
+                                        <td><a href="#"><?php echo $row->Title; ?></a></td>
+                                        <td class="action"><a href="<?php echo site_url("/news/update/$row->Id");?>" >Edit</a></td>
                                         <td class="action"><a href="">Delete</a></td>
                                     </tr>
-                                    <tr>
-                                        <td class="number">2. </td>
-                                        <td><a href="#">Dasar-dasar pemrograman</a></td>
-                                        <td class="action"><a href="edit-post.html">Edit</a></td>
-                                        <td class="action"><a href="#">Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="number">3. </td>
-                                        <td><a href="#">Dasar-dasar pemrograman</a></td>
-                                        <td class="action"><a href="edit-post.html">Edit</a></td>
-                                        <td class="action"><a href="#">Delete</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="number">4. </td>
-                                        <td><a href="#">Dasar-dasar pemrograman</a></td>
-                                        <td class="action"><a href="edit-post.html">Edit</a></td>
-                                        <td class="action"><a href="#">Delete</a></td>
-                                    </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
@@ -77,13 +61,7 @@ and open the template in the editor.
                     <div class="md-col-12 text-center">
                         <nav>
                           <ul class="pagination">
-                            <li><a href="#">&laquo;</a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">&raquo;</a></li>
+                            <?php echo $page;?>
                         </ul>
                     </nav>
                 </div>
