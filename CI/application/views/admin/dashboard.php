@@ -39,25 +39,25 @@ and open the template in the editor.
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="add-showcase.html" class="btn btn-default navbar-btn">Add Showcase</a>
+                                    <a href=<?php echo site_url("dashboard/game/new");?> class="btn btn-default navbar-btn">Add Showcase</a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="change-slider.html" class="btn btn-default navbar-btn">Change Slider</a>
+                                    <a href=<?php echo site_url("dashboard/game/slider");?> class="btn btn-default navbar-btn">Change Slider</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-12">
-                                    <a href="dashboard-news.html">
+                                    <a href=<?php echo site_url("dashboard/news");?>>
                                         <div class="kotak">News</div>
                                     </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <a href="add-new.html" class="btn btn-default navbar-btn">Add News</a>
+                                    <a href=<?php echo site_url("dashboard/news/new");?> class="btn btn-default navbar-btn">Add News</a>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-12">
-                                    <a href="update-donasi.html">
+                                    <a href=<?php echo site_url("dashboard/donasi");?>>
                                         <div class="kotak">Update Donasi</div>
                                     </a>
                                 </div>

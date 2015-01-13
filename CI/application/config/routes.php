@@ -44,10 +44,12 @@ $route['404_override'] = '';
 $route['profile'] = "home/profile";
 $route['donasi'] = "home/donasi";
 $route['dashboard'] = "home/dashboard";
+$route['dashboard/donasi'] = "home/donasi";
 
 $route['dashboard/game'] = "game/dashboard";
 $route['dashboard/game/new'] = "game/addNew";
 $route['dashboard/game/update/(:num)'] = "game/update/$1";
+$route['dashboard/game/slider'] = "game/change_slider";
 $route['dashboard/news'] = "news/dashboard";
 $route['dashboard/news/new'] = "news/addNew";
 $route['dashboard/news/update/(:num)'] = "news/update/$1";
