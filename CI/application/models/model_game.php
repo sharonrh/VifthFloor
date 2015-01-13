@@ -11,7 +11,7 @@ class Model_game extends CI_Model
 		$avail = $this->input->post('avail');
 		
 		$config['upload_path'] = '././assets/uploads/gameThumbnail';
- 		$config['allowed_types'] = 'gif|jpg|png';
+ 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 	  	$config['max_size'] = '100000';
 	    $config['max_width'] = '2000';
 		$config['max_height'] = '2000';
@@ -24,7 +24,7 @@ class Model_game extends CI_Model
 	  	$thumb=$upload_data['file_name'];
 
 		$config['upload_path'] = '././assets/uploads/gameHeader';
-		$config['allowed_types'] = 'gif|jpg|png';
+		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 		$config['max_size'] = '10000';
 		$config['max_width'] = '1024';
 		$config['max_height'] = '768';
