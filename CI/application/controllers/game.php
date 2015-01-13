@@ -161,5 +161,11 @@ class Game extends CI_Controller
 			redirect('/login/index');
 		}
 	}
+
+	function slider()
+	{
+		
+		
+	}
 }
 ?>

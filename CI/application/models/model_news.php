@@ -26,7 +26,8 @@ class Model_news extends CI_Model
 
 	function takeSome($per_page, $page_id)
 	{	
-		$take=$this->db->get('news', $per_page, $page_id);
+		$this->db->select('*')->from('news')->order_by("PublishedDate", "desc")->limit($per_page, $page_id); 
+		$take = $this->db->get();
 
 		return $take->result();
 	}
