@@ -5,8 +5,8 @@ class Model_news extends CI_Model
 	
 	function takeNews($slug=FALSE)
 	{
-		$query = $this->db->query("SELECT * FROM news ORDER BY PublishedDate DESC LIMIT 4;");
-		
+		$take = $this->db->query("SELECT * FROM news ORDER BY PublishedDate DESC;");
+
 		if($slug==FALSE){
 			if($take->num_rows()>0)
 			{

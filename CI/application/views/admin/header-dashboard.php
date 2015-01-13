@@ -31,6 +31,7 @@
                   </ul>
                 </li>
                 <li><a href=<?php echo site_url("dashboard/donasi");?>>UPDATE DONASI</a></li>
+                <li><a href=<?php echo site_url("login/logout");?>>LOGOUT</a></li>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
