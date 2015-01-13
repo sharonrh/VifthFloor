@@ -148,7 +148,8 @@ class Model_game extends CI_Model
 
 	function takeSome($per_page, $page_id)
 	{	
-		$take = $this->db->get('games', $per_page, $page_id);
+		$this->db->select('*')->from('games')->order_by("Title", "asc")->limit($per_page, $page_id); 
+		$take = $this->db->get();
 
 		return $take->result();
 	}
