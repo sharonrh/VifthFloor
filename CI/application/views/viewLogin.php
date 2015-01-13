@@ -25,8 +25,8 @@ and open the template in the editor.
     </head>
     <body>
         <div id="container">
-            <header class="margin-bottom-30">
-                <?php $this->load->view('header'); ?>
+            <header>
+                <?php $this->load->view('header-login'); ?>
             </header>
 
             <div id="main">
@@ -59,7 +59,6 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
-            <footer></footer>
         </div>
     </body>
 </html>
