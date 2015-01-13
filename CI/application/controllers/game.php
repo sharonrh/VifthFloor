@@ -9,6 +9,9 @@ class Game extends CI_Controller
 		$this->load->model('model_login');
 		$this->load->library('image_CRUD');
 		$this->load->helper('url');
+		$this->load->library('upload');
+
+
 	}
 
 	public function game()
@@ -131,7 +134,6 @@ class Game extends CI_Controller
 			if (!strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')
 			{
 				$this->session->set_userdata('gameId', $_POST['id']);
-				echo "string";
 			}
 
 			$data = $this->model_game->select($slug);

@@ -9,12 +9,42 @@ class Model_game extends CI_Model
 		$date = date("Y/m/d");
 		$desc = $this->input->post('desc');
 		$avail = $this->input->post('avail');
+		
+		$config['upload_path'] = '././assets/uploads/gameThumbnail';
+ 		$config['allowed_types'] = 'gif|jpg|png';
+	  	$config['max_size'] = '100000';
+	    $config['max_width'] = '2000';
+		$config['max_height'] = '2000';
+
+	  	$this->load->library('upload', $config);
+
+	  	$this->upload->initialize($config); 
+		$this->upload->do_upload('thumbnail');
+		$upload_data = $this->upload->data();
+	  	$thumb=$upload_data['file_name'];
+
+		$config['upload_path'] = '././assets/uploads/gameHeader';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = '10000';
+		$config['max_width'] = '1024';
+		$config['max_height'] = '768';
+
+		$this->load->library('upload', $config);
+
+		$this->upload->initialize($config); 
+		$this->upload->do_upload('gambarBerita');
+		$upload_data = $this->upload->data();
+		$header=$upload_data['file_name'];
+
 		$data = array(
 			'Title' => $title,
 			'Description' => $desc,
 			'ReleaseDate' => $date,
 			'AvailableOn' => $avail,
+			'Thumbnail' => $thumb,
+			'Header' => $header
 			);
+
 		$this->db->insert('games',$data);
 
 		$game = $this->db->get_where('games',array('Title' => $title));
@@ -60,24 +90,53 @@ class Model_game extends CI_Model
 	
 	function takeImage($slug)
 		{
-			echo $slug;
 			$query = $this->db->get_where('gamesImage',array('IdGame' => $slug));
 			return $query->result();
 		}
 	
 	function update($slug)
 	{
-		echo $slug;
+		
 		$title = $this->input->post('title');
 		$date = date("Y/m/d");
 		$desc = $this->input->post('desc');
 		$avail = $this->input->post('avail');
+
+		$config['upload_path'] = '././assets/uploads/gameThumbnail';
+ 		$config['allowed_types'] = 'gif|jpg|png';
+	  	$config['max_size'] = '100000';
+	    $config['max_width'] = '2000';
+		$config['max_height'] = '2000';
+
+	  	$this->load->library('upload', $config);
+
+	  	$this->upload->initialize($config); 
+		$this->upload->do_upload('thumbnail');
+		$upload_data = $this->upload->data();
+	  	$thumb=$upload_data['file_name'];
+
+		$config['upload_path'] = '././assets/uploads/gameHeader';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$config['max_size'] = '10000';
+		$config['max_width'] = '2000';
+		$config['max_height'] = '2000';
+
+		$this->load->library('upload', $config);
+
+		$this->upload->initialize($config); 
+		$this->upload->do_upload('gambarBerita');
+		$upload_data = $this->upload->data();
+		$header=$upload_data['file_name'];
+
 		$data = array(
 			'Title' => $title,
 			'Description' => $desc,
 			'ReleaseDate' => $date,
 			'AvailableOn' => $avail,
+			'Thumbnail' => $thumb,
+			'Header' => $header
 			);
+
 		$this->db->where('Id',$slug);
 		$this->db->update('games',$data);
 	}
