@@ -66,7 +66,7 @@ and open the template in the editor.
 
                         <div class="row showcase margin-bottom-50">
                             <div class="col-md-3 col-xs-3">
-                                <img class="img-responsive" src=<?php echo base_url("assets/images/meh.png");?>>
+                                <img class="img-responsive" width='100px' height='100px' src='<?php echo base_url();?>assets/uploads/gameThumbnail/<?php echo $row->Thumbnail;?>' >
                             </div>
                             <div class="col-md-9 col-xs-9">
                                 <div class="game-title">
