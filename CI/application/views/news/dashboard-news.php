@@ -27,7 +27,7 @@ and open the template in the editor.
     </head>
     <body>
         <div id="container">
-            <header><?php $this->load->view('admin/header-dashboard'); ?></header>
+            <header></header>
             <div id="main">
                 <div id="dashboards">
                     <div class="row">
