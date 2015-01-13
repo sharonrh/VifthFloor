@@ -39,7 +39,7 @@ class Model_news extends CI_Model
 		$creator=1;
 
 		$config['upload_path'] = '././assets/uploads/newsThumbnail';
- 		$config['allowed_types'] = 'gif|jpg|png';
+ 		$config['allowed_types'] = 'gif|jpg|png|jpeg';
 	  	$config['max_size'] = '100000';
 	    $config['max_width'] = '2000';
 		$config['max_height'] = '2000';

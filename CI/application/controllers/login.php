@@ -31,7 +31,7 @@ class Login extends CI_Controller
 		else
 		{
 			$this->load->helper('url');
-			redirect('/news/addNew');
+			redirect('/home/dashboard/');
 		}
 		
 	}
@@ -49,7 +49,7 @@ class Login extends CI_Controller
 		else
 		{
 			$this->load->helper('url');
-			redirect('/news/addNew');
+			redirect('/home/dashboard/');
 		}
 	}
 
