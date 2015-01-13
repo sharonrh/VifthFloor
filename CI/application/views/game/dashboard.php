@@ -10,9 +10,9 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <!-- Bootstrap -->
-        <link href="css/style-dashboard.css" rel="stylesheet" media="screen">
-        <script src="js/jquery-latest.min.js" type="text/javascript"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <link href=<?php echo base_url("assets/css/style-dashboard.css");?> rel="stylesheet" media="screen">
+    <script src=<?php echo base_url("assets/js/jquery-latest.min.js");?> type="text/javascript"></script>
+    <script type="text/javascript" src=<?php echo base_url("assets/js/bootstrap.js");?>></script>
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -27,7 +27,7 @@ and open the template in the editor.
     </head>
     <body>
         <div id="container">
-            <header></header>
+            <header><?php $this->load->view('admin/header-dashboard'); ?></header>
             <div id="main">
                 <div id="dashboard">
                     <div class="row">
