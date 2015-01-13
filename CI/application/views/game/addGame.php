@@ -2,23 +2,23 @@
 	<head>
 		<title>Game - Dashboard</title>
 		<meta charset="UTF-8">
-         <meta name="viewport" content="width=device-width">
-        <!-- Bootstrap -->
-        <link href=<?php echo base_url("assets/css/style-dashboard.css");?> rel="stylesheet" media="screen">
-        <script src=<?php echo base_url("js/jquery-latest.min.js");?> type="text/javascript"></script>
-        <script type="text/javascript" src=<?php echo base_url("js/bootstrap.js");?>></script>
-  		<script type="text/javascript" src=<?php echo base_url("application/third_party/tinymce/js/tinymce/tinymce.min.js");?>></script>
-  		<script type="text/javascript">
-  		tinymce.init({
-  		    selector: "textarea",
-  		    plugins: [
-  		        "advlist autolink lists link image charmap preview anchor",
-  		        "searchreplace visualblocks fullscreen",
-  		        "insertdatetime media table contextmenu paste"
-  		    ],
-  		    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-  		});
-  		</script>
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap -->
+    <link href=<?php echo base_url("assets/css/style-dashboard.css");?> rel="stylesheet" media="screen">
+    <script src=<?php echo base_url("js/jquery-latest.min.js");?> type="text/javascript"></script>
+    <script type="text/javascript" src=<?php echo base_url("js/bootstrap.js");?>></script>
+		<script type="text/javascript" src=<?php echo base_url("application/third_party/tinymce/js/tinymce/tinymce.min.js");?>></script>
+		<script type="text/javascript">
+		tinymce.init({
+		    selector: "textarea",
+		    plugins: [
+		        "advlist autolink lists link image charmap preview anchor",
+		        "searchreplace visualblocks fullscreen",
+		        "insertdatetime media table contextmenu paste"
+		    ],
+		    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		});
+		</script>
 
 		<?php 
 		foreach($css_files as $file): ?>

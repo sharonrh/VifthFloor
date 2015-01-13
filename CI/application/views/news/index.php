@@ -21,9 +21,10 @@ and open the template in the editor.
         <![endif]-->
     </head>
     <body>
-        <?php $this->load->view('header'); ?>
         <div id="container">
-            <header class="margin-bottom-30"></header>
+            <header class="margin-bottom-30">
+               <?php $this->load->view('header'); ?>
+            </header>
             <div id="main-container">
                 <div class="container">
                     <div class="news-title margin-bottom-50">

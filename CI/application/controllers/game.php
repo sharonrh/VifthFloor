@@ -57,6 +57,38 @@ class Game extends CI_Controller
 		$this->load->view('game/viewGame',$data);
 	}
 
+	// ------------------
+	// admin controllers
+	// ------------------
+
+	function dashboard($id = NULL) 
+	{
+		$total_rows = $this->db->get('games');
+		$this->load->library('pagination');
+		$this->load->helper('text');
+
+		$config['base_url'] = base_url()."index.php/dashboard/game";
+		$config['total_rows'] = $total_rows->num_rows();
+		$config['per_page'] = '3';
+		$config['first_page'] = 'First';
+		$config['last_page'] = 'Last';
+		$config['next_page'] = '&laquo;';
+		$config['prev_page'] = '&laquo;';
+		$config['num_tag_open'] = $config['prev_tag_open'] = $config['first_tag_open'] = "<li>";
+		$config['next_tag_open'] = $config['last_tag_open'] = "<li>";
+		$config['cur_tag_open'] = "<li><a href='#'>";
+		$config['num_tag_close'] = $config['prev_tag_close'] = $config['first_tag_close'] = "</li>";
+		$config['next_tag_close'] = $config['last_tag_close'] = "</li>";
+		$config['cur_tag_close'] = "</a></li>";
+
+		$this->pagination->initialize($config);
+		$data['page'] = $this->pagination->create_links();
+		$data['slides'] = $this->model_game->takeSlide();
+		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
+		
+		$this->load->view('game/dashboard',$data);
+	}
+
 	function addNew()
 	{
 		$result = $this->model_login->isLogin();
@@ -68,7 +100,7 @@ class Game extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_game->addNew();
-				redirect('/game/index');
+				redirect('dashboard/game');
 			}
 
 			$image_crud = new image_CRUD();
@@ -89,34 +121,6 @@ class Game extends CI_Controller
 		}
 	}
 
-	function allGame($id = NULL) 
-	{
-		$total_rows = $this->db->get('games');
-		$this->load->library('pagination');
-		$this->load->helper('text');
-
-		$config['base_url'] = base_url()."index.php/game/allGame";
-		$config['total_rows'] = $total_rows->num_rows();
-		$config['per_page'] = '3';
-		$config['first_page'] = 'First';
-		$config['last_page'] = 'Last';
-		$config['next_page'] = '&laquo;';
-		$config['prev_page'] = '&laquo;';
-		$config['num_tag_open'] = $config['prev_tag_open'] = $config['first_tag_open'] = "<li>";
-		$config['next_tag_open'] = $config['last_tag_open'] = "<li>";
-		$config['cur_tag_open'] = "<li><a href='#'>";
-		$config['num_tag_close'] = $config['prev_tag_close'] = $config['first_tag_close'] = "</li>";
-		$config['next_tag_close'] = $config['last_tag_close'] = "</li>";
-		$config['cur_tag_close'] = "</a></li>";
-
-		$this->pagination->initialize($config);
-		$data['page'] = $this->pagination->create_links();
-		$data['slides'] = $this->model_game->takeSlide();
-		$data['records'] = $this->model_game->takeSome($config['per_page'],$id);
-		
-		$this->load->view('game/adminGame',$data);
-	}
-
 	function update($slug)
 	{	
 		$result = $this->model_login->isLogin();
@@ -128,7 +132,7 @@ class Game extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_game->update($_POST['id']);
-				redirect('/game/index');
+				redirect('dashboard/game');
 			}
 
 			if (!strtoupper($_SERVER['REQUEST_METHOD']) == 'POST')

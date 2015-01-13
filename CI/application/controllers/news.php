@@ -53,14 +53,17 @@ class News extends CI_Controller
 		$this->load->view('news/viewNews',$data);
 	}
 
-	function allNews($id=NULL)
+	// ------------------
+	// admin controllers
+	// ------------------
+
+	function dashboard($id=NULL)
 	{
 		$total_rows = $this->db->get('news');
 		$this->load->library('pagination');
-		$this->load->helper('url');
 		$this->load->helper('text');
 
-		$config['base_url'] = base_url()."index.php/news/allNews";
+		$config['base_url'] = base_url()."index.php/dashboard/news";
 		$config['total_rows'] = $total_rows->num_rows();
 		$config['per_page'] = '3';
 		$config['first_page'] = 'First';
@@ -79,7 +82,7 @@ class News extends CI_Controller
 
 		$data['records'] = $this->model_news->takeSome($config['per_page'],$id);
 
-		$this->load->view('news/adminNews', $data);
+		$this->load->view('news/dashboard', $data);
 	}
 
 	function addNew()
@@ -95,7 +98,7 @@ class News extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_news->addNew();
-				redirect('/news/index');
+				redirect('dashboard/news');
 			}
 
 			$data['category']=$this->model_news->fillDropCategory();
@@ -105,7 +108,6 @@ class News extends CI_Controller
 
 		else
 		{
-			$this->load->helper('url');
 			redirect('/login/index');
 		}
 	}
@@ -121,8 +123,7 @@ class News extends CI_Controller
 			if($this->input->post('submit'))
 			{
 				$this->model_news->update($slug);
-				$this->load->helper('url');
-				redirect('/news/index');
+				redirect('dashboard/news');
 			}
 			
 			$data['news'] = $this->model_news->select($slug);
