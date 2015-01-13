@@ -57,19 +57,19 @@
 								<form>
 									<div class="form-group">
 										<label for="title">Judul</label>
-										<?php echo form_input('title',$data->Title, array('name' => 'title', 'class' => 'form-control', 'placeholder' => 'Enter Title'));?>
+										<?php echo form_input(array('name' => 'title', 'class' => 'form-control', 'placeholder' => 'Enter Title'), $data->Title);?>
 									</div>
 									<div class="form-group">
 										<label for="desc">Description</label>
-										<?php echo form_textarea('desc',$data->Description, array('name' => 'desc', 'class' => 'form-control', 'rows' => '5'));?>
+										<?php echo form_textarea(array('name' => 'desc', 'class' => 'form-control', 'rows' => '5'), $data->Description);?>
 									</div>
 									<div class="form-group">
 										<label for="title">Release Date</label>
-										<?php echo form_input('date',$data->ReleaseDate, array('name' => 'date', 'class' => 'form-control'));?>
+										<?php echo form_input(array('name' => 'date', 'class' => 'form-control'), $data->ReleaseDate);?>
 									</div>
 									<div class="form-group">
 										<label for="title">Available On</label>
-										<?php echo form_input('avail',$data->AvailableOn, array('name' => 'avail', 'class' => 'form-control'));?>
+										<?php echo form_input(array('name' => 'avail', 'class' => 'form-control'), $data->AvailableOn);?>
 									</div>
 									<div class="form-group">
 										<label for="title">Current Thumbnail</label>
