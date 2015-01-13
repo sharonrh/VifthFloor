@@ -19,39 +19,34 @@ and open the template in the editor.
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
           <![endif]-->
-          <script>
-            $(function() {
-                $("header").load("header-dashboard.html");
-            });
-        </script>
     </head>
     <body>
         <div id="container">
-            <header></header>
+            <header>
+                <?php $this->load->view('admin/header-dashboard'); ?>
+            </header>
             <div id="main">
                 <div id="dashboards">
                     <div class="row">
                         <div class="col-md-12">
                             <div id="list">
                                 <h1>News</h1>
-                                <a href="add-new.html" class="btn btn-default navbar-btn">Add New</a>
+                                <a href=<?php echo site_url("dashboard/news/new");?> class="btn btn-default navbar-btn">Add New</a>
                                 <table class="table table-bordered table-hover">
                                     <thead>
                                       <tr>
-                                        <th>No</th>
                                         <th>Title</th>
                                         <th colspan="2" class="text-center">Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($records as $row): ?>
-                                    <tr>
-                                        <td class="number">1.</td>
-                                        <td><a href="#"><?php echo $row->Title; ?></a></td>
-                                        <td class="action"><a href="<?php echo site_url("/news/update/$row->Id");?>" >Edit</a></td>
-                                        <td class="action"><a href="">Delete</a></td>
-                                    </tr>
-                                    <?php endforeach; ?>
+                                        <tr>
+                                            <td><a href=<?php echo site_url("/game/view/$row->Id");?>><?php echo $row->Title; ?></a></td>
+                                            <td class="action"><a href=<?php echo site_url("dashboard/news/update/$row->Id");?>>Edit</a></td>
+                                            <td class="action"><a href="">Delete</a></td>
+                                        </tr>
+                                    <?php endforeach; ?> 
                                 </tbody>
                             </table>
                         </div>

@@ -65,7 +65,7 @@ class News extends CI_Controller
 
 		$config['base_url'] = base_url()."index.php/dashboard/news";
 		$config['total_rows'] = $total_rows->num_rows();
-		$config['per_page'] = '3';
+		$config['per_page'] = '20';
 		$config['first_page'] = 'First';
 		$config['last_page'] = 'Last';
 		$config['next_page'] = '&laquo;';
