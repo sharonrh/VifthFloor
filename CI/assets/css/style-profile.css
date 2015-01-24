@@ -44,7 +44,7 @@ hr.hr-misi:after {
 }
 #team, #visimisi{
 	margin-top: 50px;
-	margin-bottom: 50px;
+/*	margin-bottom: 50px;*/
 }
 .content-about, .gambar-content, .visi, .misi {
 	margin-top: 50px;
@@ -75,17 +75,16 @@ hr.hr-misi:after {
 }
 
 #profil-container{
-	padding-bottom: 500px;
+	/*padding-bottom: 500px;*/
 }
 
-h1.center{
+h1.kuantitas-donasi{
 	font-size: 60px;
-	margin-left: 30%;
+	text-align: center;
 }
 
 .button-donasi{
 	text-align: center;
-	margin-left: 41%;
 	height: 50px;
 	width: 110px;
 	color: white;
@@ -93,7 +92,7 @@ h1.center{
 	border: none;
 }
 
-p.center{
-	margin-top: 13%;
-	margin-left: 39%;
+.center{
+	margin-top: 11%;
+	text-align: center;
 }

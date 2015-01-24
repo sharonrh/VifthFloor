@@ -28,7 +28,7 @@ and open the template in the editor.
             <div id="main-container">
                 <div class="donasi-container">
                     <div class="row donasi">
-                        <div class="col-md-12">
+                        <div class="col-md-12 center">
                         <p class="jumlah-donasi">Jumlah donasi sekarang</p>
                             <h1 class="kuantitas-donasi">1.000.000.000</h1>
                             <button type="button" class="button-donasi">
