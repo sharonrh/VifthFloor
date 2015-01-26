@@ -37,7 +37,7 @@ and open the template in the editor.
                     <!-- Wrapper for slides -->
 
                     <div class="carousel-inner">
-                        <?php $count=0; ?>
+                       <!-- <?php $count=0; ?>
                             <?php foreach ($slides as $row): ?>
 
                                 <?php if ($count==0) :?>
@@ -57,7 +57,22 @@ and open the template in the editor.
                                 
                                 <?php $count++; ?>
 
-                            <?php endforeach; ?>            
+                            <?php endforeach; ?>  -->
+                        <div class="item active">
+                            <img class="img-responsive" height ="100px" src="<?php echo base_url();?>/assets/images/satu.jpg" alt="">
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" height ="100px" src="<?php echo base_url();?>/assets/images/dua.jpg" alt="">
+                            <div class="carousel-caption">
+                            </div>
+                        </div>
+                        <div class="item">
+                            <img class="img-responsive" height ="100px" src="<?php echo base_url();?>/assets/images/tiga.jpg" alt="">
+                            <div class="carousel-caption">
+                            </div>
+                        </div>          
                         
                     </div>
                 </div>
@@ -70,8 +85,8 @@ and open the template in the editor.
                                 <?php foreach ($news as $row): ?>
                                 <div class="col-sm-3 padding-left-15 padding-right-5">
                                     <figure class="cap-top">
-                                        <a href="#" class="thumbnail">
-                                            <img src=<?php echo base_url();?>/assets/uploads/<?php echo $row->Thumbnail;?>;?>>
+                                        <a href="<?php echo site_url();?>/news/view/<?php echo $row->Id;?>" class="thumbnail">
+                                            <img src="<?php echo base_url();?>/assets/uploads/newsThumbnail/<?php echo $row->Thumbnail;?>"/>
                                             <div class="slide-caption">
                                                 <p class="isi-caption"><?php echo $row->Title;?></p>
                                             </div>
@@ -82,15 +97,19 @@ and open the template in the editor.
                                 
                             </div>
                         </div>
+                        
                         <div class="col-sm-1">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <div class="view-more">
-                                        <a href=<?php echo site_url("news");?>>More ++</a>
+                                    <div class="box-information-index">
+                                        <div class="view-more">
+                                            <a href=<?php echo site_url("news");?>>More News</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 
                     </div>
                 </div>

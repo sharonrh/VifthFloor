@@ -7,6 +7,7 @@ class Dashboard extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('model_login');
+		$this->load->model('model_home');
 	}
 
 	function index()
@@ -30,6 +31,22 @@ class Dashboard extends CI_Controller
 		if($loggedIn)
 		{
 			$this->load->view('admin/donasi');
+		}
+		else
+		{
+			redirect('/login/index');
+		}
+	}
+
+	function addSlider()
+	{
+		$loggedIn = $this->model_login->isLogin();
+		
+		if($loggedIn)
+		{
+			$sliders=$this->model_home->takeSlide();
+
+			$this->load->view('admin/change-slider');
 		}
 		else
 		{

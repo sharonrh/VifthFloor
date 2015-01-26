@@ -28,16 +28,16 @@ and open the template in the editor.
             <div id="main-container">
                 <div class="container">
                     <h1 id="news" class="margin-bottom-30">SHOWCASE</h1>
-                    <div id="featured-games-carousel" class="carousel slide margin-bottom-30" data-ride="carousel">
+                    <!--<div id="featured-games-carousel" class="carousel slide margin-bottom-30" data-ride="carousel">
                         <!-- Indicators -->
-                        <ol class="carousel-indicators">
+                       <!-- <ol class="carousel-indicators">
                             <li data-target="#featured-games-carousel" data-slide-to="0" class="active"></li>
                             <li data-target="#featured-games-carousel" data-slide-to="1"></li>
                             <li data-target="#featured-games-carousel" data-slide-to="2"></li>
                         </ol>
 
                         <!-- Wrapper for slides -->
-                        <div class="carousel-inner">
+                     <!--   <div class="carousel-inner">
                             <?php $count=0; ?>
                             <?php foreach ($slides as $row): ?>
 
@@ -59,14 +59,14 @@ and open the template in the editor.
                                 <?php $count++; ?>
 
                             <?php endforeach; ?>
-                        </div>
+                        </div>-->
                     </div>
 
                     <?php foreach ($records as $row): ?>
 
                         <div class="row showcase margin-bottom-50">
                             <div class="col-md-3 col-xs-3">
-                                <img class="img-responsive" width='100px' height='100px' src='<?php echo base_url();?>assets/uploads/gameThumbnail/<?php echo $row->Thumbnail;?>' >
+                                <img class="img-responsive" width='200px' height='200px' src='<?php echo base_url();?>assets/uploads/gameThumbnail/<?php echo $row->Thumbnail;?>' >
                             </div>
                             <div class="col-md-9 col-xs-9">
                                 <div class="game-title">

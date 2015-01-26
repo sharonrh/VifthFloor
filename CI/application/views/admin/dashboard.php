@@ -41,9 +41,9 @@ and open the template in the editor.
                                 <div class="col-md-4">
                                     <a href=<?php echo site_url("dashboard/game/new");?> class="btn btn-default navbar-btn">Add Showcase</a>
                                 </div>
-                                <div class="col-md-4">
+                                <!--<div class="col-md-4">
                                     <a href=<?php echo site_url("dashboard/game/slider");?> class="btn btn-default navbar-btn">Change Slider</a>
-                                </div>
+                                </div>-->
                             </div>
                             <div class="col-md-4">
                                 <div class="col-md-12">
