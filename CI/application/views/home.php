@@ -22,7 +22,7 @@ and open the template in the editor.
       </head>
       <body>
         <div id="container">
-            <header>
+            <header id="header-home">
                 <?php $this->load->view('header'); ?> 
             </header>
             <div>

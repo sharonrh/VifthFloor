@@ -16,8 +16,11 @@ body {
 }
 /*============================ header =====================================*/
 
-.navbar-header{
+.navbar-header {
     height: 20%;
+}
+#viewNews .navbar-header {
+    max-height: 10%;
 }
 .navbar-inverse {
     background-color: #1a1a1a;
@@ -35,7 +38,7 @@ body {
 .navbar-inverse .navbar-nav > li > a:focus {
     color: white;
     background-color: #D60D0D;
-    box-shadow: 0 -2px 2px 1px #B00B0B inset;
+    box-shadow: 0 -4px 2px 1px #B00B0B inset;
 }
 .navbar-brand {
     padding: 0;
@@ -64,6 +67,23 @@ body {
     position: relative;
     right: 100px;
 }
+
+#header-home #mark-home{
+    background-color: #D60D0D;
+}
+#header-profile #mark-profile{
+    background-color: #D60D0D;
+}
+#header-game #mark-game{
+    background-color: #D60D0D;
+}
+#header-news #mark-news{
+    background-color: #D60D0D;
+}
+#header-donasi #mark-donasi{
+    background-color: #D60D0D;
+}
+
 /*=======================================================================*/
 
 /*============================ home =====================================*/
