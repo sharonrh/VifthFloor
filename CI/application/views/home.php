@@ -25,7 +25,7 @@ and open the template in the editor.
             <header>
                 <?php $this->load->view('header'); ?> 
             </header>
-            <div id="main">
+            <div>
                 <div id="headlineCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
