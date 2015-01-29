@@ -53,40 +53,39 @@ and open the template in the editor.
             <header></header>
             <div id="main">
                 <div class="game-image">
-                    <img class="img-responsive" src=<?php echo base_url("assets/images/satu.jpg");?>>
+                    <img class="img-responsive" src="<?php echo base_url();?>/assets/uploads/gameHeader/<?php echo $header;?>">
                 </div>
                 <div class="game-about">
                     <p> 
                         <?php echo $description;?>
                     </p>
 
-                    <ul>
-                        <li>Feature 1</li>
-                        <li>Feature 2</li>
-                        <li>Feature 3</li>
-                        <li>Feature 4</li>
-                    </ul>
                 </div>
-                <?php foreach ($images as $row): ?>
+                
+                
                     <div class="game-screenshot">
                         <div class="row atas">
+                            <?php foreach ($images as $row): ?>
                             <div class="col-md-6">
+                            
                                 <a class="fancybox" href="<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?>" >
                                     <img class="img-responsive" src="<?php echo base_url();?>/assets/uploads/<?php echo $row->Location;?>"/>
-                                </a>
-                                <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
-                                    <div class="lightbox-content">
-                                        <img src=<?php echo base_url("assets/images/icon2.png");?>>
-                                    </div>
-                                </div>
+                                </a>                            
                             </div>
+                            
+                            <?php endforeach; ?>
                         </div>
+
+                    
                     </div>
-                <?php endforeach; ?>
-            </div>
-            <footer>
-                <?php $this->load->view('footer'); ?>
-            </footer>
+                    
+        </div>
+        <div class="game-available">
+                    
+        </div>
+        <footer>
+            <?php $this->load->view('footer'); ?>
+        </footer>
         </div>
     </body>
 </html>

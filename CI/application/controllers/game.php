@@ -52,6 +52,7 @@ class Game extends CI_Controller
 		$data['games'] = $this->model_game->takeGame($slug);
 		$data['title'] = $data['games']['Title'];
 		$data['description'] = $data['games']['Description'];
+		$data['header'] = $data['games']['Header'];
 		$data['images']=$this->model_game->takeImage($slug);
 
 		$this->load->view('game/viewGame',$data);
