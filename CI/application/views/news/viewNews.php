@@ -16,8 +16,8 @@
       </head>
       <body>
           <div id="container">
-            <header id="viewNews" class="margin-bottom-30">
-                <?php $this->load->view('header'); ?>
+            <header id="header-news" class="margin-bottom-30">
+               <?php $this->load->view('header'); ?>
             </header>
             <div id="main-container">
                 <div class="container">
@@ -30,13 +30,14 @@
                         <article>
                             <?php echo $content;?>
                         </article>
-
+<!--
                         <div class="text-center">
                             <ul class="pagination">
                                 <li><a href="#">&laquo;</a></li>
                                 <li><a href="#">&raquo;</a></li>
                             </ul>
                         </div>
+-->
                     </div>
                 </div>
             </div>

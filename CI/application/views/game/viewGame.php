@@ -48,9 +48,10 @@ and open the template in the editor.
         </script>
     </head>
     <body>
-        <?php $this->load->view('header'); ?>
         <div id="container">
-            <header></header>
+            <header id="header-game" class="margin-bottom-30">
+                <?php $this->load->view('header'); ?>
+            </header>
             <div id="main">
                 <div class="game-image">
                     <img class="img-responsive" src="<?php echo base_url();?>/assets/uploads/gameHeader/<?php echo $header;?>">
