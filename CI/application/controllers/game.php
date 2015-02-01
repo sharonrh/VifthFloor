@@ -10,8 +10,6 @@ class Game extends CI_Controller
 		$this->load->library('image_CRUD');
 		$this->load->helper('url');
 		$this->load->library('upload');
-
-
 	}
 
 	public function game()
@@ -171,10 +169,19 @@ class Game extends CI_Controller
 		}
 	}
 
-	function slider()
+	function delete($id)
 	{
-		
-		
+		$loggedIn = $this->model_login->isLogin();
+
+		if($loggedIn)
+		{
+			$this->model_game->delete($id);
+			redirect($_SERVER['HTTP_REFERER']);  		
+		}
+		else
+		{
+			redirect('/login/index');
+		}
 	}
 }
 ?>

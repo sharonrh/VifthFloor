@@ -144,5 +144,20 @@ class News extends CI_Controller
 			redirect('/login/index');
 		}
 	}
+
+	function delete($id)
+	{
+		$loggedIn = $this->model_login->isLogin();
+
+		if($loggedIn)
+		{
+			$this->model_news->delete($id);
+			redirect($_SERVER['HTTP_REFERER']);  		
+		}
+		else
+		{
+			redirect('/login/index');
+		}
+	}
 }
 ?>

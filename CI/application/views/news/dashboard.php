@@ -42,9 +42,9 @@ and open the template in the editor.
                                 <tbody>
                                     <?php foreach ($records as $row): ?>
                                         <tr>
-                                            <td><a href=<?php echo site_url("/news/updateNews/$row->Id");?>><?php echo $row->Title; ?></a></td>
+                                            <td><a href=<?php echo site_url("/news/view/$row->Id");?>><?php echo $row->Title; ?></a></td>
                                             <td class="action"><a href=<?php echo site_url("dashboard/news/update/$row->Id");?>>Edit</a></td>
-                                            <td class="action"><a href="">Delete</a></td>
+                                            <td class="action"><a href=<?php echo site_url("dashboard/news/delete/$row->Id");?>>Delete</a></td>
                                         </tr>
                                     <?php endforeach; ?> 
                                 </tbody>

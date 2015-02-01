@@ -110,5 +110,11 @@ class Model_news extends CI_Model
 			return $data;
 		}
 	}
+
+	function delete($id)
+	{
+		$this->db->where('Id', $id);
+		$this->db->delete('news');
+	}
 }
 ?>

@@ -157,8 +157,13 @@ class Model_game extends CI_Model
 	function takeSlide()
 	{
 		$query = $this->db->query("SELECT * FROM gamesImage;");
-
 		return $query->result();
+	}
+
+	function delete($id)
+	{
+		$this->db->where('Id', $id);
+		$this->db->delete('games');
 	}
 }
 ?>
