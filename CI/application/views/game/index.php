@@ -29,7 +29,7 @@ and open the template in the editor.
                 <div class="container">
                     <h1 id="news" class="margin-bottom-30">SHOWCASE</h1>
                     <!--<div id="featured-games-carousel" class="carousel slide margin-bottom-30" data-ride="carousel">
-                        <!-- Indicators -->
+                    <!-- Indicators -->
                        <!-- <ol class="carousel-indicators">
                             <li data-target="#featured-games-carousel" data-slide-to="0" class="active"></li>
                             <li data-target="#featured-games-carousel" data-slide-to="1"></li>
@@ -60,27 +60,28 @@ and open the template in the editor.
 
                             <?php endforeach; ?>
                         </div>-->
-                    </div>
 
-                    <?php foreach ($records as $row): ?>
+                        <?php foreach ($records as $row): ?>
 
-                        <div class="row showcase margin-bottom-50">
-                            <div class="col-md-3 col-xs-3">
-                                <img class="img-responsive" width='200px' height='200px' src='<?php echo base_url();?>assets/uploads/gameThumbnail/<?php echo $row->Thumbnail;?>' >
-                            </div>
-                            <div class="col-md-9 col-xs-9">
-                                <div class="game-title">
-                                    <h2><a href=<?php echo site_url("/game/view/$row->Id");?>><?php echo $row->Title; ?></a></h2>
+                            <div class="row showcase margin-bottom-50">
+                                <div class="col-md-3 col-xs-3">
+                                <img class="img-responsive pull-right" width='200px' height='200px' src='<?php echo base_url();?>assets/uploads/gameThumbnail/<?php echo $row->Thumbnail;?>' >
                                 </div>
-                            </div>                      
-                        </div>
-                    <?php endforeach; ?>
+                                <div class="col-md-9 col-xs-9">
+                                    <div class="game-title">
+                                        <h2><a href=<?php echo site_url("/game/view/$row->Id");?>><?php echo $row->Title; ?></a></h2>
+                                    </div>
+                                </div>                      
+                            </div>
+                        <?php endforeach; ?>
 
-                    <div class="text-center">
-                        <ul class="pagination">
-                            <?php echo $page;?>
-                        </ul>
+                        <div class="text-center">
+                            <ul class="pagination">
+                                <?php echo $page;?>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
                 <footer>
                     <?php $this->load->view('footer'); ?>

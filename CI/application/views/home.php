@@ -102,7 +102,7 @@ and open the template in the editor.
                                     <div class="col-sm-12">
                                         <div class="box-information-index">
                                             <div class="view-more">
-                                                <a href=<?php echo site_url("news");?>>More News</a>
+                                                <a href=<?php echo site_url("news");?>>More<br/>News</a>
                                             </div>
                                         </div>
                                     </div>
