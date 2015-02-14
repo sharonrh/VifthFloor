@@ -62,7 +62,7 @@ class Model_game extends CI_Model
 							'IdGame' => $data['IdGame']
 							);
 					$this->db->where('Id',$row->Id);
-					$this->db->update('gamesImage',$data);
+					$this->db->update('gamesimage',$data);
 				}
 			}
 		}
@@ -90,7 +90,7 @@ class Model_game extends CI_Model
 	
 	function takeImage($slug)
 		{
-			$query = $this->db->get_where('gamesImage',array('IdGame' => $slug));
+			$query = $this->db->get_where('gamesimage',array('IdGame' => $slug));
 			return $query->result();
 		}
 	
@@ -156,7 +156,7 @@ class Model_game extends CI_Model
 
 	function takeSlide()
 	{
-		$query = $this->db->query("SELECT * FROM gamesImage;");
+		$query = $this->db->query("SELECT * FROM gamesimage;");
 		return $query->result();
 	}
 

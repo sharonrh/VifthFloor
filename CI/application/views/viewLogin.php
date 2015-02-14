@@ -26,7 +26,7 @@ and open the template in the editor.
     <body>
         <div id="container">
             <header>
-                <?php $this->load->view('header-login'); ?>
+                <?php $this->load->view('header'); ?> 
             </header>
 
             <div id="main">

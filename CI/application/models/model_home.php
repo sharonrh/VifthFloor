@@ -15,7 +15,7 @@ class Model_home extends CI_Model
 
 	function takeSlide()
 	{
-		$query = $this->db->query("SELECT * FROM slideShow;");
+		$query = $this->db->query("SELECT * FROM slideshow;");
 		return $query->result();
 	}
 }

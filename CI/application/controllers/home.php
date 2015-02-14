@@ -17,7 +17,7 @@ class Home extends CI_Controller
 	function index()
 	{
 		$data['news']=$this->model_home->takeNews();
-		$data['slides']=$this->model_home->takeSlide();
+		//$data['slides']=$this->model_home->takeSlide();
 		$this->load->view('home',$data);
 	}
 
