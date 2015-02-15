@@ -11,7 +11,8 @@ body {
 hr.team-line, .hr-visi, .hr-misi { 
 	padding: 0;
 	border: none; 
-	order-top: thick double #333;; 
+	order-top: thick double #333;
+	border-top: thick double #333; 
 	color: #333; 
 	margin-left: 50px;
 	margin-right: 50px;
