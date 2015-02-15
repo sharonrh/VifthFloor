@@ -11,7 +11,7 @@ body {
 hr.team-line, .hr-visi, .hr-misi { 
 	padding: 0;
 	border: none; 
-	border-top: thick double #333;; 
+	order-top: thick double #333;; 
 	color: #333; 
 	margin-left: 50px;
 	margin-right: 50px;
@@ -79,6 +79,7 @@ hr.hr-misi:after {
 }
 
 h1.kuantitas-donasi{
+	font-family: 'Black Ops One', cursive;
 	font-size: 60px;
 	text-align: center;
 }
@@ -86,9 +87,9 @@ h1.kuantitas-donasi{
 .button-donasi{
 	text-align: center;
 	height: 50px;
-	width: 110px;
+	width: 150px;
 	color: white;
-	background-color: #0066ff;
+	background-color: #D60D0D;
 	border: none;
 }
 

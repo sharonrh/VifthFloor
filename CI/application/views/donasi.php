@@ -11,6 +11,7 @@ and open the template in the editor.
     <meta name="viewport" content="width=device-width">
     <!-- Bootstrap -->
     <link href=<?php echo base_url("assets/css/style.css");?> rel="stylesheet" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
     <script src=<?php echo base_url("assets/js/jquery-latest.min.js");?> type="text/javascript"></script>
     <script type="text/javascript" src=<?php echo base_url("assets/js/bootstrap.js");?>></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,7 +33,7 @@ and open the template in the editor.
                         <p class="jumlah-donasi">Jumlah donasi sekarang</p>
                             <h1 class="kuantitas-donasi">1.000.000.000</h1>
                             <button type="button" class="button-donasi">
-                                Donate Now
+                                Donate via Paypal
                             </button>
                         </div>
                     </div>
